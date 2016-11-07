@@ -1,0 +1,1945 @@
+sil_stage canonical
+
+import Builtin
+import Swift
+import SwiftShims
+
+var list: [Int]
+
+// list
+sil_global hidden @_Tv3out4listGSaSi_ : $Array<Int>
+
+// globalinit_33_FD9A49A256BEB6AF7C48013347ADC3BA_token3
+sil_global private_external [fragile] @globalinit_33_FD9A49A256BEB6AF7C48013347ADC3BA_token3 : $Builtin.Word
+
+// static CommandLine._argc
+sil_global [fragile] @_TZvOs11CommandLine5_argcVs5Int32 : $Int32
+
+// globalinit_33_FD9A49A256BEB6AF7C48013347ADC3BA_token4
+sil_global private_external [fragile] @globalinit_33_FD9A49A256BEB6AF7C48013347ADC3BA_token4 : $Builtin.Word
+
+// static CommandLine._unsafeArgv
+sil_global [fragile] @_TZvOs11CommandLine11_unsafeArgvGSpGSqGSpVs4Int8___ : $UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>
+
+// _swiftEmptyArrayStorage
+sil_global [fragile] @_swiftEmptyArrayStorage : $_SwiftEmptyArrayStorage
+
+sil_scope 1 {  parent @main : $@convention(c) (Int32, UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>) -> Int32 }
+sil_scope 2 { loc "input.swift":6:1 parent 1 }
+sil_scope 3 { loc "input.swift":6:1 parent 2 }
+
+// main
+sil @main : $@convention(c) (Int32, UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>) -> Int32 {
+// %0                                             // user: %7
+// %1                                             // user: %14
+bb0(%0 : $Int32, %1 : $UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>):
+  %2 = alloc_stack $IndexingIterator<CountableRange<Int>>, var, name "$i$generator", loc "input.swift":4:7, scope 2 // users: %88, %53, %59
+  %3 = metatype $@thin CommandLine.Type, scope 1
+  // function_ref CommandLine._argc.unsafeMutableAddressor
+  %4 = function_ref @_TFOs11CommandLineau5_argcVs5Int32 : $@convention(thin) () -> Builtin.RawPointer, scope 1 // user: %5
+  %5 = apply %4() : $@convention(thin) () -> Builtin.RawPointer, scope 1 // user: %6
+  %6 = pointer_to_address %5 : $Builtin.RawPointer to [strict] $*Int32, scope 1 // user: %9
+  %7 = struct_extract %0 : $Int32, #Int32._value, scope 1 // user: %8
+  %8 = struct $Int32 (%7 : $Builtin.Int32), scope 1 // user: %9
+  store %8 to %6 : $*Int32, scope 1               // id: %9
+  %10 = metatype $@thin CommandLine.Type, scope 1
+  // function_ref CommandLine._unsafeArgv.unsafeMutableAddressor
+  %11 = function_ref @_TFOs11CommandLineau11_unsafeArgvGSpGSqGSpVs4Int8___ : $@convention(thin) () -> Builtin.RawPointer, scope 1 // user: %12
+  %12 = apply %11() : $@convention(thin) () -> Builtin.RawPointer, scope 1 // user: %13
+  %13 = pointer_to_address %12 : $Builtin.RawPointer to [strict] $*UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>, scope 1 // user: %14
+  store %1 to %13 : $*UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>, scope 1 // id: %14
+  %15 = tuple (), scope 1
+  alloc_global @_Tv3out4listGSaSi_, loc "input.swift":2:5, scope 1 // id: %16
+  %17 = global_addr @_Tv3out4listGSaSi_ : $*Array<Int>, loc "input.swift":2:5, scope 1 // users: %21, %83
+  // function_ref Array.init() -> [A]
+  %18 = function_ref @_TFSaCfT_GSax_ : $@convention(method) <τ_0_0> (@thin Array<τ_0_0>.Type) -> @owned Array<τ_0_0>, loc "input.swift":2:16, scope 1 // user: %20
+  %19 = metatype $@thin Array<Int>.Type, loc "input.swift":2:12, scope 1 // user: %20
+  %20 = apply %18<Int>(%19) : $@convention(method) <τ_0_0> (@thin Array<τ_0_0>.Type) -> @owned Array<τ_0_0>, loc "input.swift":2:18, scope 1 // user: %21
+  store %20 to %17 : $*Array<Int>, loc "input.swift":2:18, scope 1 // id: %21
+  // function_ref Collection<A where ...>.makeIterator() -> IndexingIterator<A>
+  %22 = function_ref @_TFesRxs10Collectionwx8IteratorzGVs16IndexingIteratorx_wx8_ElementzWxS0_7Element_rS_12makeIteratorfT_GS1_x_ : $@convention(method) <τ_0_0 where τ_0_0 : Collection, τ_0_0.Iterator == IndexingIterator<τ_0_0>, τ_0_0._Element == τ_0_0.Iterator.Element> (@in_guaranteed τ_0_0) -> @out IndexingIterator<τ_0_0>, loc "input.swift":4:14, scope 2 // user: %53
+  %23 = integer_literal $Builtin.Int64, 0, loc "input.swift":4:10, scope 2 // user: %24
+  %24 = struct $Int (%23 : $Builtin.Int64), loc "input.swift":4:10, scope 2 // user: %43
+  %25 = integer_literal $Builtin.Int64, 1000000, loc "input.swift":4:14, scope 2 // user: %26
+  %26 = struct $Int (%25 : $Builtin.Int64), loc "input.swift":4:14, scope 2 // user: %45
+  %27 = alloc_stack $CountableRange<Int>, loc "input.swift":4:11, scope 2 // users: %46, %55, %50
+  br bb1, loc "input.swift":4:11, scope 2         // id: %28
+
+bb1:                                              // Preds: bb0
+  br bb2, loc "input.swift":4:11, scope 2         // id: %29
+
+bb2:                                              // Preds: bb1
+  br bb3, loc "input.swift":4:11, scope 2         // id: %30
+
+bb3:                                              // Preds: bb2
+  br bb4, loc "input.swift":4:11, scope 2         // id: %31
+
+bb4:                                              // Preds: bb3
+  br bb5, loc "input.swift":4:11, scope 2         // id: %32
+
+bb5:                                              // Preds: bb4
+  br bb6, loc "input.swift":4:11, scope 2         // id: %33
+
+bb6:                                              // Preds: bb5
+  br bb7, loc "input.swift":4:11, scope 2         // id: %34
+
+bb7:                                              // Preds: bb6
+  br bb8, loc "input.swift":4:11, scope 2         // id: %35
+
+bb8:                                              // Preds: bb7
+  br bb9, loc "input.swift":4:11, scope 2         // id: %36
+
+bb9:                                              // Preds: bb8
+  br bb10, loc "input.swift":4:11, scope 2        // id: %37
+
+bb10:                                             // Preds: bb9
+  br bb11, loc "input.swift":4:11, scope 2        // id: %38
+
+bb11:                                             // Preds: bb10
+  br bb12, loc "input.swift":4:11, scope 2        // id: %39
+
+bb12:                                             // Preds: bb11
+  // function_ref CountableRange.init(uncheckedBounds : (lower : A, upper : A)) -> CountableRange<A>
+  %40 = function_ref @_TFVs14CountableRangeCfT15uncheckedBoundsT5lowerx5upperx__GS_x_ : $@convention(method) <τ_0_0 where τ_0_0 : Comparable, τ_0_0 : _Strideable, τ_0_0.Stride : SignedInteger> (@in τ_0_0, @in τ_0_0, @thin CountableRange<τ_0_0>.Type) -> @out CountableRange<τ_0_0>, loc "input.swift":4:11, scope 2 // user: %46
+  %41 = metatype $@thin CountableRange<Int>.Type, loc "input.swift":4:11, scope 2 // user: %46
+  %42 = alloc_stack $Int, loc "input.swift":4:11, scope 2 // users: %43, %48, %46
+  store %24 to %42 : $*Int, loc "input.swift":4:11, scope 2 // id: %43
+  %44 = alloc_stack $Int, loc "input.swift":4:11, scope 2 // users: %45, %47, %46
+  store %26 to %44 : $*Int, loc "input.swift":4:11, scope 2 // id: %45
+  %46 = apply %40<Int, Int, Int, Int, Int, Int, Int>(%27, %42, %44, %41) : $@convention(method) <τ_0_0 where τ_0_0 : Comparable, τ_0_0 : _Strideable, τ_0_0.Stride : SignedInteger> (@in τ_0_0, @in τ_0_0, @thin CountableRange<τ_0_0>.Type) -> @out CountableRange<τ_0_0>, loc "input.swift":4:11, scope 2
+  dealloc_stack %44 : $*Int, loc "input.swift":4:11, scope 2 // id: %47
+  dealloc_stack %42 : $*Int, loc "input.swift":4:11, scope 2 // id: %48
+  br bb13, loc "input.swift":4:11, scope 2        // id: %49
+
+bb13:                                             // Preds: bb12
+  %50 = load %27 : $*CountableRange<Int>, loc "input.swift":4:11, scope 2 // user: %52
+  %51 = alloc_stack $CountableRange<Int>, loc "input.swift":4:11, scope 2 // users: %52, %54, %53
+  store %50 to %51 : $*CountableRange<Int>, loc "input.swift":4:11, scope 2 // id: %52
+  %53 = apply %22<CountableRange<Int>, Int, Int, CountableRange<Int>, CountableRange<Int>, Int, Int, Int, Int, Int, Int, IndexingIterator<CountableRange<Int>>, CountableRange<Int>, Int, Int, IndexingIterator<CountableRange<Int>>, CountableRange<Int>, Int, Int, Int, Int, Int, Int, Int, Int>(%2, %51) : $@convention(method) <τ_0_0 where τ_0_0 : Collection, τ_0_0.Iterator == IndexingIterator<τ_0_0>, τ_0_0._Element == τ_0_0.Iterator.Element> (@in_guaranteed τ_0_0) -> @out IndexingIterator<τ_0_0>, loc "input.swift":4:14, scope 2
+  dealloc_stack %51 : $*CountableRange<Int>, loc "input.swift":4:14, scope 2 // id: %54
+  dealloc_stack %27 : $*CountableRange<Int>, loc "input.swift":4:14, scope 2 // id: %55
+  br bb14, loc "input.swift":4:1, scope 2         // id: %56
+
+bb14:                                             // Preds: bb15 bb13
+  // function_ref IndexingIterator.next() -> A._Element?
+  %57 = function_ref @_TFVs16IndexingIterator4nextfT_GSqwx8_Element_ : $@convention(method) <τ_0_0 where τ_0_0 : _IndexableBase> (@inout IndexingIterator<τ_0_0>) -> @out Optional<τ_0_0._Element>, loc "input.swift":4:7, scope 2 // user: %59
+  %58 = alloc_stack $Optional<Int>, loc "input.swift":4:7, scope 2 // users: %61, %60, %59
+  %59 = apply %57<CountableRange<Int>, Int, CountableRange<Int>, Int>(%58, %2) : $@convention(method) <τ_0_0 where τ_0_0 : _IndexableBase> (@inout IndexingIterator<τ_0_0>) -> @out Optional<τ_0_0._Element>, loc "input.swift":4:7, scope 2
+  %60 = load %58 : $*Optional<Int>, loc "input.swift":4:7, scope 2 // users: %66, %64
+  dealloc_stack %58 : $*Optional<Int>, loc "input.swift":4:7, scope 2 // id: %61
+  %62 = integer_literal $Builtin.Int1, -1, loc "input.swift":4:1, scope 2 // user: %64
+  %63 = integer_literal $Builtin.Int1, 0, loc "input.swift":4:1, scope 2 // user: %64
+  %64 = select_enum %60 : $Optional<Int>, case #Optional.some!enumelt.1: %62, default %63 : $Builtin.Int1, loc "input.swift":4:1, scope 2 // user: %65
+  cond_br %64, bb15, bb16, loc "input.swift":4:1, scope 2 // id: %65
+
+bb15:                                             // Preds: bb14
+  %66 = unchecked_enum_data %60 : $Optional<Int>, #Optional.some!enumelt.1, loc "input.swift":4:1, scope 2 // user: %67
+  debug_value %66 : $Int, let, name "i", loc "input.swift":4:5, scope 2 // id: %67
+  // function_ref += infix<A where ...> (inout [A.Iterator.Element], A) -> ()
+  %68 = function_ref @_TFsoi2peuRxs10CollectionrFTRGSaWx8Iterator7Element__x_T_ : $@convention(thin) <τ_0_0 where τ_0_0 : Collection> (@inout Array<τ_0_0.Iterator.Element>, @in τ_0_0) -> (), loc "input.swift":5:10, scope 3 // user: %83
+  // function_ref Array.init(arrayLiteral : [A]...) -> [A]
+  %69 = function_ref @_TFSaCft12arrayLiteralGSax__GSax_ : $@convention(method) <τ_0_0> (@owned Array<τ_0_0>, @thin Array<τ_0_0>.Type) -> @owned Array<τ_0_0>, loc "input.swift":5:13, scope 3 // user: %80
+  %70 = metatype $@thin Array<Int>.Type, loc "input.swift":5:13, scope 3 // user: %80
+  %71 = integer_literal $Builtin.Word, 1, loc "input.swift":5:14, scope 3 // user: %73
+  // function_ref _allocateUninitializedArray<A> (Builtin.Word) -> ([A], Builtin.RawPointer)
+  %72 = function_ref @_TFs27_allocateUninitializedArrayurFBwTGSax_Bp_ : $@convention(thin) <τ_0_0> (Builtin.Word) -> (@owned Array<τ_0_0>, Builtin.RawPointer), loc "input.swift":5:14, scope 3 // user: %73
+  %73 = apply %72<Int>(%71) : $@convention(thin) <τ_0_0> (Builtin.Word) -> (@owned Array<τ_0_0>, Builtin.RawPointer), loc "input.swift":5:14, scope 3 // users: %75, %74
+  %74 = tuple_extract %73 : $(Array<Int>, Builtin.RawPointer), 0, loc "input.swift":5:14, scope 3 // user: %80
+  %75 = tuple_extract %73 : $(Array<Int>, Builtin.RawPointer), 1, loc "input.swift":5:14, scope 3 // user: %76
+  %76 = pointer_to_address %75 : $Builtin.RawPointer to [strict] $*Int, loc "input.swift":5:14, scope 3 // user: %79
+  %77 = integer_literal $Builtin.Int64, 5, loc "input.swift":5:14, scope 3 // user: %78
+  %78 = struct $Int (%77 : $Builtin.Int64), loc "input.swift":5:14, scope 3 // user: %79
+  store %78 to %76 : $*Int, loc "input.swift":5:14, scope 3 // id: %79
+  %80 = apply %69<Int>(%74, %70) : $@convention(method) <τ_0_0> (@owned Array<τ_0_0>, @thin Array<τ_0_0>.Type) -> @owned Array<τ_0_0>, loc "input.swift":5:14, scope 3 // user: %82
+  %81 = alloc_stack $Array<Int>, loc "input.swift":5:13, scope 3 // users: %82, %84, %83
+  store %80 to %81 : $*Array<Int>, loc "input.swift":5:13, scope 3 // id: %82
+  %83 = apply %68<[Int], Int, Int, CountableRange<Int>, IndexingIterator<Array<Int>>, ArraySlice<Int>, Int, Int, Int, Int, Int, Int, IndexingIterator<CountableRange<Int>>, CountableRange<Int>, Int, Int, Int, IndexingIterator<ArraySlice<Int>>, ArraySlice<Int>, Int, Int, Int, Int, Int, Int, Int, Int>(%17, %81) : $@convention(thin) <τ_0_0 where τ_0_0 : Collection> (@inout Array<τ_0_0.Iterator.Element>, @in τ_0_0) -> (), loc "input.swift":5:10, scope 3
+  dealloc_stack %81 : $*Array<Int>, loc "input.swift":5:15, scope 3 // id: %84
+  br bb14, loc "input.swift":6:1, scope 2         // id: %85
+
+bb16:                                             // Preds: bb14
+  %86 = integer_literal $Builtin.Int32, 0, scope 2 // user: %87
+  %87 = struct $Int32 (%86 : $Builtin.Int32), scope 2 // user: %89
+  dealloc_stack %2 : $*IndexingIterator<CountableRange<Int>>, loc "input.swift":4:7, scope 2 // id: %88
+  return %87 : $Int32, scope 2                    // id: %89
+}
+
+sil_scope 4 {  parent @_TFs20_stdlib_didEnterMainFT4argcVs5Int324argvGSpGSqGSpVs4Int8____T_ : $@convention(thin) (Int32, UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>) -> () }
+
+// _stdlib_didEnterMain(argc : Int32, argv : UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>) -> ()
+sil public_external [transparent] [fragile] @_TFs20_stdlib_didEnterMainFT4argcVs5Int324argvGSpGSqGSpVs4Int8____T_ : $@convention(thin) (Int32, UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>) -> () {
+// %0                                             // user: %6
+// %1                                             // user: %13
+bb0(%0 : $Int32, %1 : $UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>):
+  %2 = metatype $@thin CommandLine.Type, scope 4
+  // function_ref CommandLine._argc.unsafeMutableAddressor
+  %3 = function_ref @_TFOs11CommandLineau5_argcVs5Int32 : $@convention(thin) () -> Builtin.RawPointer, scope 4 // user: %4
+  %4 = apply %3() : $@convention(thin) () -> Builtin.RawPointer, scope 4 // user: %5
+  %5 = pointer_to_address %4 : $Builtin.RawPointer to [strict] $*Int32, scope 4 // user: %8
+  %6 = struct_extract %0 : $Int32, #Int32._value, scope 4 // user: %7
+  %7 = struct $Int32 (%6 : $Builtin.Int32), scope 4 // user: %8
+  store %7 to %5 : $*Int32, scope 4               // id: %8
+  %9 = metatype $@thin CommandLine.Type, scope 4
+  // function_ref CommandLine._unsafeArgv.unsafeMutableAddressor
+  %10 = function_ref @_TFOs11CommandLineau11_unsafeArgvGSpGSqGSpVs4Int8___ : $@convention(thin) () -> Builtin.RawPointer, scope 4 // user: %11
+  %11 = apply %10() : $@convention(thin) () -> Builtin.RawPointer, scope 4 // user: %12
+  %12 = pointer_to_address %11 : $Builtin.RawPointer to [strict] $*UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>, scope 4 // user: %13
+  store %1 to %12 : $*UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>, scope 4 // id: %13
+  %14 = tuple (), scope 4                         // user: %15
+  return %14 : $(), scope 4                       // id: %15
+}
+
+
+// Array.init() -> [A]
+sil [fragile] [_semantics "array.init"] @_TFSaCfT_GSax_ : $@convention(method) <Element> (@thin Array<Element>.Type) -> @owned Array<Element>
+
+
+// Collection<A where ...>.makeIterator() -> IndexingIterator<A>
+sil [fragile] @_TFesRxs10Collectionwx8IteratorzGVs16IndexingIteratorx_wx8_ElementzWxS0_7Element_rS_12makeIteratorfT_GS1_x_ : $@convention(method) <Self where Self : Collection, Self.Iterator == IndexingIterator<Self>, Self._Element == Self.Iterator.Element> (@in_guaranteed Self) -> @out IndexingIterator<Self>
+
+sil_scope 5 {  parent @_TFsoi3zzluRxs10Comparablexs11_StrideablewxPS0_6Strides13SignedIntegerrFTxx_GVs14CountableRangex_ : $@convention(thin) <τ_0_0 where τ_0_0 : Comparable, τ_0_0 : _Strideable, τ_0_0.Stride : SignedInteger> (@in τ_0_0, @in τ_0_0) -> @out CountableRange<τ_0_0> }
+
+// ..< infix<A where ...> (A, A) -> CountableRange<A>
+sil public_external [transparent] [fragile] @_TFsoi3zzluRxs10Comparablexs11_StrideablewxPS0_6Strides13SignedIntegerrFTxx_GVs14CountableRangex_ : $@convention(thin) <Bound where Bound : Comparable, Bound : _Strideable, Bound.Stride : SignedInteger> (@in Bound, @in Bound) -> @out CountableRange<Bound> {
+// %0                                             // user: %51
+// %1                                             // users: %55, %48, %27
+// %2                                             // users: %54, %50, %29
+bb0(%0 : $*CountableRange<Bound>, %1 : $*Bound, %2 : $*Bound):
+  %3 = string_literal utf8 "Can't form Range with upperBound < lowerBound", scope 5 // user: %5
+  %4 = integer_literal $Builtin.Word, 45, scope 5 // user: %9
+  %5 = builtin "ptrtoint_Word"(%3 : $Builtin.RawPointer) : $Builtin.Word, scope 5 // user: %9
+  br bb1, scope 5                                 // id: %6
+
+bb1:                                              // Preds: bb0
+  %7 = integer_literal $Builtin.Int8, 2, scope 5  // user: %9
+  br bb2, scope 5                                 // id: %8
+
+bb2:                                              // Preds: bb1
+  %9 = struct $StaticString (%5 : $Builtin.Word, %4 : $Builtin.Word, %7 : $Builtin.Int8), scope 5 // user: %73
+  br bb3, scope 5                                 // id: %10
+
+bb3:                                              // Preds: bb2
+  br bb4, scope 5                                 // id: %11
+
+bb4:                                              // Preds: bb3
+  %12 = string_literal utf8 "/Users/ben/Documents/code/swift-sources/build/Ninja-DebugAssert/swift-macosx-x86_64/stdlib/public/core/8/Range.swift", scope 5 // user: %14
+  %13 = integer_literal $Builtin.Word, 116, scope 5 // user: %18
+  %14 = builtin "ptrtoint_Word"(%12 : $Builtin.RawPointer) : $Builtin.Word, scope 5 // user: %18
+  br bb5, scope 5                                 // id: %15
+
+bb5:                                              // Preds: bb4
+  %16 = integer_literal $Builtin.Int8, 2, scope 5 // user: %18
+  br bb6, scope 5                                 // id: %17
+
+bb6:                                              // Preds: bb5
+  %18 = struct $StaticString (%14 : $Builtin.Word, %13 : $Builtin.Word, %16 : $Builtin.Int8), scope 5 // user: %73
+  br bb7, scope 5                                 // id: %19
+
+bb7:                                              // Preds: bb6
+  br bb8, scope 5                                 // id: %20
+
+bb8:                                              // Preds: bb7
+  %21 = integer_literal $Builtin.Int64, 1660, scope 5 // user: %22
+  %22 = struct $UInt (%21 : $Builtin.Int64), scope 5 // user: %73
+  br bb9, scope 5                                 // id: %23
+
+bb9:                                              // Preds: bb8
+  %24 = witness_method $Bound, #Comparable."<="!1 : $@convention(witness_method) <τ_0_0 where τ_0_0 : Comparable> (@in τ_0_0, @in τ_0_0, @thick τ_0_0.Type) -> Bool, scope 5 // user: %30
+  %25 = metatype $@thick Bound.Type, scope 5      // user: %30
+  %26 = alloc_stack $Bound, scope 5               // users: %32, %30, %27
+  copy_addr %1 to [initialization] %26 : $*Bound, scope 5 // id: %27
+  %28 = alloc_stack $Bound, scope 5               // users: %31, %30, %29
+  copy_addr %2 to [initialization] %28 : $*Bound, scope 5 // id: %29
+  %30 = apply %24<Bound>(%26, %28, %25) : $@convention(witness_method) <τ_0_0 where τ_0_0 : Comparable> (@in τ_0_0, @in τ_0_0, @thick τ_0_0.Type) -> Bool, scope 5 // user: %34
+  dealloc_stack %28 : $*Bound, scope 5            // id: %31
+  dealloc_stack %26 : $*Bound, scope 5            // id: %32
+  %33 = integer_literal $Builtin.Int1, -1, scope 5 // user: %35
+  %34 = struct_extract %30 : $Bool, #Bool._value, scope 5 // user: %35
+  %35 = builtin "int_expect_Int1"(%34 : $Builtin.Int1, %33 : $Builtin.Int1) : $Builtin.Int1, scope 5 // user: %36
+  %36 = struct $Bool (%35 : $Builtin.Int1), scope 5 // user: %37
+  %37 = struct_extract %36 : $Bool, #Bool._value, scope 5 // user: %39
+  %38 = integer_literal $Builtin.Int1, -1, scope 5 // user: %39
+  %39 = builtin "xor_Int1"(%37 : $Builtin.Int1, %38 : $Builtin.Int1) : $Builtin.Int1, scope 5 // user: %40
+  %40 = struct $Bool (%39 : $Builtin.Int1), scope 5 // user: %41
+  %41 = struct_extract %40 : $Bool, #Bool._value, scope 5 // user: %42
+  cond_br %41, bb13, bb10, scope 5                // id: %42
+
+bb10:                                             // Preds: bb9
+  br bb11, scope 5                                // id: %43
+
+bb11:                                             // Preds: bb10
+  br bb12, scope 5                                // id: %44
+
+bb12:                                             // Preds: bb11
+  // function_ref CountableRange.init(uncheckedBounds : (lower : A, upper : A)) -> CountableRange<A>
+  %45 = function_ref @_TFVs14CountableRangeCfT15uncheckedBoundsT5lowerx5upperx__GS_x_ : $@convention(method) <τ_0_0 where τ_0_0 : Comparable, τ_0_0 : _Strideable, τ_0_0.Stride : SignedInteger> (@in τ_0_0, @in τ_0_0, @thin CountableRange<τ_0_0>.Type) -> @out CountableRange<τ_0_0>, scope 5 // user: %51
+  %46 = metatype $@thin CountableRange<Bound>.Type, scope 5 // user: %51
+  %47 = alloc_stack $Bound, scope 5               // users: %53, %51, %48
+  copy_addr %1 to [initialization] %47 : $*Bound, scope 5 // id: %48
+  %49 = alloc_stack $Bound, scope 5               // users: %52, %51, %50
+  copy_addr %2 to [initialization] %49 : $*Bound, scope 5 // id: %50
+  %51 = apply %45<Bound, Bound.Stride, Bound._DisabledRangeIndex, Bound.Stride.IntegerLiteralType, Bound.Stride.Stride, Bound.Stride._DisabledRangeIndex, Bound.Stride.Stride.IntegerLiteralType>(%0, %47, %49, %46) : $@convention(method) <τ_0_0 where τ_0_0 : Comparable, τ_0_0 : _Strideable, τ_0_0.Stride : SignedInteger> (@in τ_0_0, @in τ_0_0, @thin CountableRange<τ_0_0>.Type) -> @out CountableRange<τ_0_0>, scope 5
+  dealloc_stack %49 : $*Bound, scope 5            // id: %52
+  dealloc_stack %47 : $*Bound, scope 5            // id: %53
+  destroy_addr %2 : $*Bound, scope 5              // id: %54
+  destroy_addr %1 : $*Bound, scope 5              // id: %55
+  %56 = tuple (), scope 5                         // user: %57
+  return %56 : $(), scope 5                       // id: %57
+
+bb13:                                             // Preds: bb9
+  // function_ref _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %58 = function_ref @_TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 5 // user: %73
+  %59 = string_literal utf8 "fatal error", scope 5 // user: %61
+  %60 = integer_literal $Builtin.Word, 11, scope 5 // user: %65
+  %61 = builtin "ptrtoint_Word"(%59 : $Builtin.RawPointer) : $Builtin.Word, scope 5 // user: %65
+  br bb14, scope 5                                // id: %62
+
+bb14:                                             // Preds: bb13
+  %63 = integer_literal $Builtin.Int8, 2, scope 5 // user: %65
+  br bb15, scope 5                                // id: %64
+
+bb15:                                             // Preds: bb14
+  %65 = struct $StaticString (%61 : $Builtin.Word, %60 : $Builtin.Word, %63 : $Builtin.Int8), scope 5 // user: %73
+  br bb16, scope 5                                // id: %66
+
+bb16:                                             // Preds: bb15
+  br bb17, scope 5                                // id: %67
+
+bb17:                                             // Preds: bb16
+  br bb18, scope 5                                // id: %68
+
+bb18:                                             // Preds: bb17
+  %69 = integer_literal $Builtin.Int32, 1, scope 5 // user: %70
+  %70 = struct $UInt32 (%69 : $Builtin.Int32), scope 5 // user: %73
+  br bb19, scope 5                                // id: %71
+
+bb19:                                             // Preds: bb18
+  br bb20, scope 5                                // id: %72
+
+bb20:                                             // Preds: bb19
+  %73 = apply %58(%65, %9, %18, %22, %70) : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 5
+  unreachable , scope 5                           // id: %74
+}
+
+sil_scope 6 {  parent @_TFSiCfT22_builtinIntegerLiteralBi2048__Si : $@convention(method) (Builtin.Int2048, @thin Int.Type) -> Int }
+
+// Int.init(_builtinIntegerLiteral : Builtin.Int2048) -> Int
+sil public_external [transparent] [fragile] @_TFSiCfT22_builtinIntegerLiteralBi2048__Si : $@convention(method) (Builtin.Int2048, @thin Int.Type) -> Int {
+// %0                                             // user: %2
+bb0(%0 : $Builtin.Int2048, %1 : $@thin Int.Type):
+  %2 = builtin "s_to_s_checked_trunc_Int2048_Int64"(%0 : $Builtin.Int2048) : $(Builtin.Int64, Builtin.Int1), scope 6 // users: %4, %3
+  %3 = tuple_extract %2 : $(Builtin.Int64, Builtin.Int1), 0, scope 6 // user: %5
+  %4 = tuple_extract %2 : $(Builtin.Int64, Builtin.Int1), 1, scope 6
+  %5 = struct $Int (%3 : $Builtin.Int64), scope 6 // user: %6
+  return %5 : $Int, scope 6                       // id: %6
+}
+
+
+// IndexingIterator.next() -> A._Element?
+sil [fragile] @_TFVs16IndexingIterator4nextfT_GSqwx8_Element_ : $@convention(method) <Elements where Elements : _IndexableBase> (@inout IndexingIterator<Elements>) -> @out Optional<Elements._Element>
+
+
+// += infix<A where ...> (inout [A.Iterator.Element], A) -> ()
+sil [fragile] @_TFsoi2peuRxs10CollectionrFTRGSaWx8Iterator7Element__x_T_ : $@convention(thin) <C where C : Collection> (@inout Array<C.Iterator.Element>, @in C) -> ()
+
+
+// Array.init(arrayLiteral : [A]...) -> [A]
+sil [fragile] @_TFSaCft12arrayLiteralGSax__GSax_ : $@convention(method) <Element> (@owned Array<Element>, @thin Array<Element>.Type) -> @owned Array<Element>
+
+
+// _allocateUninitializedArray<A> (Builtin.Word) -> ([A], Builtin.RawPointer)
+sil [fragile] [always_inline] @_TFs27_allocateUninitializedArrayurFBwTGSax_Bp_ : $@convention(thin) <Element> (Builtin.Word) -> (@owned Array<Element>, Builtin.RawPointer)
+
+
+// CommandLine._argc.unsafeMutableAddressor
+sil [fragile] [global_init] @_TFOs11CommandLineau5_argcVs5Int32 : $@convention(thin) () -> Builtin.RawPointer
+
+
+// CommandLine._unsafeArgv.unsafeMutableAddressor
+sil [fragile] [global_init] @_TFOs11CommandLineau11_unsafeArgvGSpGSqGSpVs4Int8___ : $@convention(thin) () -> Builtin.RawPointer
+
+
+// globalinit_33_FD9A49A256BEB6AF7C48013347ADC3BA_func3
+sil private_external [fragile] @globalinit_33_FD9A49A256BEB6AF7C48013347ADC3BA_func3 : $@convention(thin) () -> ()
+
+
+// globalinit_33_FD9A49A256BEB6AF7C48013347ADC3BA_func4
+sil private_external [fragile] @globalinit_33_FD9A49A256BEB6AF7C48013347ADC3BA_func4 : $@convention(thin) () -> ()
+
+
+// _ArrayBuffer.init() -> _ArrayBuffer<A>
+sil hidden_external [fragile] @_TFVs12_ArrayBufferCfT_GS_x_ : $@convention(method) <Element> (@thin _ArrayBuffer<Element>.Type) -> @owned _ArrayBuffer<Element>
+
+
+// CountableRange.init(uncheckedBounds : (lower : A, upper : A)) -> CountableRange<A>
+sil [fragile] @_TFVs14CountableRangeCfT15uncheckedBoundsT5lowerx5upperx__GS_x_ : $@convention(method) <Bound where Bound : Comparable, Bound : _Strideable, Bound.Stride : SignedInteger> (@in Bound, @in Bound, @thin CountableRange<Bound>.Type) -> @out CountableRange<Bound>
+
+
+// _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+sil [fragile] [noinline] [_semantics "arc.programtermination_point"] [_semantics "stdlib_binary_only"] @_TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never
+
+sil_scope 7 {  parent @_TTWSis10ComparablesZFS_oi1lfTxx_Sb : $@convention(witness_method) (@in Int, @in Int, @thick Int.Type) -> Bool }
+
+// protocol witness for static Comparable.< infix(A, A) -> Bool in conformance Int
+sil public_external [transparent] [fragile] [thunk] @_TTWSis10ComparablesZFS_oi1lfTxx_Sb : $@convention(witness_method) (@in Int, @in Int, @thick Int.Type) -> Bool {
+// %0                                             // user: %3
+// %1                                             // user: %4
+bb0(%0 : $*Int, %1 : $*Int, %2 : $@thick Int.Type):
+  %3 = load %0 : $*Int, scope 7                   // user: %6
+  %4 = load %1 : $*Int, scope 7                   // user: %6
+  // function_ref < infix(Int, Int) -> Bool
+  %5 = function_ref @_TFsoi1lFTSiSi_Sb : $@convention(thin) (Int, Int) -> Bool, scope 7 // user: %6
+  %6 = apply %5(%3, %4) : $@convention(thin) (Int, Int) -> Bool, scope 7 // user: %7
+  return %6 : $Bool, scope 7                      // id: %7
+}
+
+sil_scope 8 {  parent @_TTWSis10ComparablesZFS_oi2lefTxx_Sb : $@convention(witness_method) (@in Int, @in Int, @thick Int.Type) -> Bool }
+
+// protocol witness for static Comparable.<= infix(A, A) -> Bool in conformance Int
+sil public_external [transparent] [fragile] [thunk] @_TTWSis10ComparablesZFS_oi2lefTxx_Sb : $@convention(witness_method) (@in Int, @in Int, @thick Int.Type) -> Bool {
+// %0                                             // user: %3
+// %1                                             // user: %4
+bb0(%0 : $*Int, %1 : $*Int, %2 : $@thick Int.Type):
+  %3 = load %0 : $*Int, scope 8                   // user: %5
+  %4 = load %1 : $*Int, scope 8                   // user: %6
+  %5 = struct_extract %3 : $Int, #Int._value, scope 8 // user: %7
+  %6 = struct_extract %4 : $Int, #Int._value, scope 8 // user: %7
+  %7 = builtin "cmp_sle_Int64"(%5 : $Builtin.Int64, %6 : $Builtin.Int64) : $Builtin.Int1, scope 8 // user: %8
+  %8 = struct $Bool (%7 : $Builtin.Int1), scope 8 // user: %9
+  return %8 : $Bool, scope 8                      // id: %9
+}
+
+sil_scope 9 {  parent @_TTWSis10ComparablesZFS_oi2gefTxx_Sb : $@convention(witness_method) (@in Int, @in Int, @thick Int.Type) -> Bool }
+
+// protocol witness for static Comparable.>= infix(A, A) -> Bool in conformance Int
+sil public_external [transparent] [fragile] [thunk] @_TTWSis10ComparablesZFS_oi2gefTxx_Sb : $@convention(witness_method) (@in Int, @in Int, @thick Int.Type) -> Bool {
+// %0                                             // user: %3
+// %1                                             // user: %4
+bb0(%0 : $*Int, %1 : $*Int, %2 : $@thick Int.Type):
+  %3 = load %0 : $*Int, scope 9                   // user: %6
+  %4 = load %1 : $*Int, scope 9                   // user: %6
+  // function_ref >= infix(Int, Int) -> Bool
+  %5 = function_ref @_TFsoi2geFTSiSi_Sb : $@convention(thin) (Int, Int) -> Bool, scope 9 // user: %6
+  %6 = apply %5(%3, %4) : $@convention(thin) (Int, Int) -> Bool, scope 9 // user: %7
+  return %6 : $Bool, scope 9                      // id: %7
+}
+
+sil_scope 10 {  parent @_TTWSis10ComparablesZFS_oi1gfTxx_Sb : $@convention(witness_method) (@in Int, @in Int, @thick Int.Type) -> Bool }
+
+// protocol witness for static Comparable.> infix(A, A) -> Bool in conformance Int
+sil public_external [transparent] [fragile] [thunk] @_TTWSis10ComparablesZFS_oi1gfTxx_Sb : $@convention(witness_method) (@in Int, @in Int, @thick Int.Type) -> Bool {
+// %0                                             // user: %3
+// %1                                             // user: %4
+bb0(%0 : $*Int, %1 : $*Int, %2 : $@thick Int.Type):
+  %3 = load %0 : $*Int, scope 10                  // user: %6
+  %4 = load %1 : $*Int, scope 10                  // user: %6
+  // function_ref > infix(Int, Int) -> Bool
+  %5 = function_ref @_TFsoi1gFTSiSi_Sb : $@convention(thin) (Int, Int) -> Bool, scope 10 // user: %6
+  %6 = apply %5(%3, %4) : $@convention(thin) (Int, Int) -> Bool, scope 10 // user: %7
+  return %6 : $Bool, scope 10                     // id: %7
+}
+
+
+// IndexingIterator.init(_elements : A) -> IndexingIterator<A>
+sil [fragile] @_TFVs16IndexingIteratorCfT9_elementsx_GS_x_ : $@convention(method) <Elements where Elements : _IndexableBase> (@in Elements, @thin IndexingIterator<Elements>.Type) -> @out IndexingIterator<Elements>
+
+
+// static Array._allocateUninitialized(Int) -> ([A], UnsafeMutablePointer<A>)
+sil [fragile] [_semantics "array.uninitialized"] @_TZFSa22_allocateUninitializedfSiTGSax_GSpx__ : $@convention(method) <Element> (Int, @thin Array<Element>.Type) -> (@owned Array<Element>, UnsafeMutablePointer<Element>)
+
+
+// static Array._adoptStorage(_ContiguousArrayStorage<A>, count : Int) -> ([A], UnsafeMutablePointer<A>)
+sil [fragile] [_semantics "array.uninitialized"] @_TZFSa13_adoptStoragefTGCs23_ContiguousArrayStoragex_5countSi_TGSax_GSpx__ : $@convention(method) <Element> (@owned _ContiguousArrayStorage<Element>, Int, @thin Array<Element>.Type) -> (@owned Array<Element>, UnsafeMutablePointer<Element>)
+
+
+// _ContiguousArrayStorageBase.init() -> _ContiguousArrayStorageBase
+sil hidden_external [fragile] @_TFCs27_ContiguousArrayStorageBasecfT_S_ : $@convention(method) (@owned _ContiguousArrayStorageBase) -> @owned _ContiguousArrayStorageBase
+
+
+// _ContiguousArrayStorageBase.withUnsafeBufferOfObjects<A> ((UnsafeBufferPointer<AnyObject>) throws -> A) throws -> A
+sil hidden_external [fragile] @_TFCs27_ContiguousArrayStorageBase25withUnsafeBufferOfObjectsurfzFzGSRPs9AnyObject__xx : $@convention(method) <R> (@owned @callee_owned (UnsafeBufferPointer<AnyObject>) -> (@out R, @error Error), @guaranteed _ContiguousArrayStorageBase) -> (@out R, @error Error)
+
+
+// _ContiguousArrayStorage.init(_doNotCallMeBase : ()) -> _ContiguousArrayStorage<A>
+sil hidden_external [fragile] @_TFCs23_ContiguousArrayStoragecfT16_doNotCallMeBaseT__GS_x_ : $@convention(method) <Element> (@owned _ContiguousArrayStorage<Element>) -> @owned _ContiguousArrayStorage<Element>
+
+
+// _ContiguousArrayStorage._withVerbatimBridgedUnsafeBuffer<A> ((UnsafeBufferPointer<AnyObject>) throws -> A1) throws -> A1?
+sil hidden_external [fragile] @_TFCs23_ContiguousArrayStorage32_withVerbatimBridgedUnsafeBufferurfzFzGSRPs9AnyObject__qd__GSqqd___ : $@convention(method) <Element><R> (@owned @callee_owned (UnsafeBufferPointer<AnyObject>) -> (@out R, @error Error), @guaranteed _ContiguousArrayStorage<Element>) -> (@out Optional<R>, @error Error)
+
+
+// _ContiguousArrayStorage._getNonVerbatimBridgedCount() -> Int
+sil hidden_external [fragile] @_TFCs23_ContiguousArrayStorage27_getNonVerbatimBridgedCountfT_Si : $@convention(method) <Element> (@guaranteed _ContiguousArrayStorage<Element>) -> Int
+
+
+// _ContiguousArrayStorage._getNonVerbatimBridgedHeapBuffer() -> _HeapBuffer<Int, AnyObject>
+sil hidden_external [fragile] @_TFCs23_ContiguousArrayStorage32_getNonVerbatimBridgedHeapBufferfT_GVs11_HeapBufferSiPs9AnyObject__ : $@convention(method) <Element> (@guaranteed _ContiguousArrayStorage<Element>) -> @owned _HeapBuffer<Int, AnyObject>
+
+
+// _ContiguousArrayStorage.canStoreElements(ofDynamicType : Any.Type) -> Bool
+sil hidden_external [fragile] @_TFCs23_ContiguousArrayStorage16canStoreElementsfT13ofDynamicTypePMP__Sb : $@convention(method) <Element> (@thick Any.Type, @guaranteed _ContiguousArrayStorage<Element>) -> Bool
+
+
+// _ContiguousArrayStorage.staticElementType.getter
+sil hidden_external [fragile] @_TFCs23_ContiguousArrayStorageg17staticElementTypePMP_ : $@convention(method) <Element> (@guaranteed _ContiguousArrayStorage<Element>) -> @thick Any.Type
+
+
+// _ContiguousArrayStorage.__deallocating_deinit
+sil hidden_external [fragile] @_TFCs23_ContiguousArrayStorageD : $@convention(method) <Element> (@owned _ContiguousArrayStorage<Element>) -> ()
+
+
+// StaticString.withUTF8Buffer<A> ((UnsafeBufferPointer<UInt8>) -> A) -> A
+sil [fragile] @_TFVs12StaticString14withUTF8BufferurfFGSRVs5UInt8_xx : $@convention(method) <R> (@owned @callee_owned (UnsafeBufferPointer<UInt8>) -> @out R, StaticString) -> @out R
+
+sil_scope 11 {  parent @_TFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU0_FGSRVs5UInt8_T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString) -> () }
+
+// (_unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never).(closure #2)
+sil shared_external [fragile] @_TFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU0_FGSRVs5UInt8_T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString) -> () {
+// %0                                             // user: %4
+// %1                                             // user: %8
+bb0(%0 : $UnsafeBufferPointer<UInt8>, %1 : $StaticString):
+  // function_ref StaticString.withUTF8Buffer<A> ((UnsafeBufferPointer<UInt8>) -> A) -> A
+  %2 = function_ref @_TFVs12StaticString14withUTF8BufferurfFGSRVs5UInt8_xx : $@convention(method) <τ_0_0> (@owned @callee_owned (UnsafeBufferPointer<UInt8>) -> @out τ_0_0, StaticString) -> @out τ_0_0, scope 11 // user: %8
+  // function_ref (_unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never).(closure #2).(closure #1)
+  %3 = function_ref @_TFFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU0_FGSRVs5UInt8_T_U_FGSRS1__T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>) -> (), scope 11 // user: %4
+  %4 = partial_apply %3(%0) : $@convention(thin) (UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>) -> (), scope 11 // user: %6
+  // function_ref thunk
+  %5 = function_ref @_TTRXFo_dGSRVs5UInt8___XFo_dGSRS___iT__ : $@convention(thin) (UnsafeBufferPointer<UInt8>, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out (), scope 11 // user: %6
+  %6 = partial_apply %5(%4) : $@convention(thin) (UnsafeBufferPointer<UInt8>, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out (), scope 11 // user: %8
+  %7 = alloc_stack $(), scope 11                  // users: %10, %8
+  %8 = apply %2<()>(%7, %6, %1) : $@convention(method) <τ_0_0> (@owned @callee_owned (UnsafeBufferPointer<UInt8>) -> @out τ_0_0, StaticString) -> @out τ_0_0, scope 11
+  %9 = tuple (), scope 11
+  dealloc_stack %7 : $*(), scope 11               // id: %10
+  %11 = tuple (), scope 11                        // user: %12
+  return %11 : $(), scope 11                      // id: %12
+}
+
+sil_scope 12 {  parent @_TTRXFo_dGSRVs5UInt8___XFo_dGSRS___iT__ : $@convention(thin) (UnsafeBufferPointer<UInt8>, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out () }
+
+// thunk
+sil shared_external [transparent] [fragile] [reabstraction_thunk] @_TTRXFo_dGSRVs5UInt8___XFo_dGSRS___iT__ : $@convention(thin) (UnsafeBufferPointer<UInt8>, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out () {
+// %1                                             // user: %3
+// %2                                             // user: %3
+bb0(%0 : $*(), %1 : $UnsafeBufferPointer<UInt8>, %2 : $@callee_owned (UnsafeBufferPointer<UInt8>) -> ()):
+  %3 = apply %2(%1) : $@callee_owned (UnsafeBufferPointer<UInt8>) -> (), scope 12
+  %4 = tuple (), scope 12                         // user: %5
+  return %4 : $(), scope 12                       // id: %5
+}
+
+sil_scope 13 {  parent @_TFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU_FGSRVs5UInt8_T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString, StaticString, UInt, UInt) -> () }
+
+// (_unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never).(closure #1)
+sil shared_external [fragile] @_TFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU_FGSRVs5UInt8_T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString, StaticString, UInt, UInt) -> () {
+// %0                                             // user: %7
+// %1                                             // user: %11
+// %2                                             // user: %7
+// %3                                             // user: %7
+// %4                                             // user: %7
+bb0(%0 : $UnsafeBufferPointer<UInt8>, %1 : $StaticString, %2 : $StaticString, %3 : $UInt, %4 : $UInt):
+  // function_ref StaticString.withUTF8Buffer<A> ((UnsafeBufferPointer<UInt8>) -> A) -> A
+  %5 = function_ref @_TFVs12StaticString14withUTF8BufferurfFGSRVs5UInt8_xx : $@convention(method) <τ_0_0> (@owned @callee_owned (UnsafeBufferPointer<UInt8>) -> @out τ_0_0, StaticString) -> @out τ_0_0, scope 13 // user: %11
+  // function_ref (_unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never).(closure #1).(closure #1)
+  %6 = function_ref @_TFFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU_FGSRVs5UInt8_T_U_FGSRS1__T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString, UnsafeBufferPointer<UInt8>, UInt, UInt) -> (), scope 13 // user: %7
+  %7 = partial_apply %6(%2, %0, %3, %4) : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString, UnsafeBufferPointer<UInt8>, UInt, UInt) -> (), scope 13 // user: %9
+  // function_ref thunk
+  %8 = function_ref @_TTRXFo_dGSRVs5UInt8___XFo_dGSRS___iT__ : $@convention(thin) (UnsafeBufferPointer<UInt8>, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out (), scope 13 // user: %9
+  %9 = partial_apply %8(%7) : $@convention(thin) (UnsafeBufferPointer<UInt8>, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out (), scope 13 // user: %11
+  %10 = alloc_stack $(), scope 13                 // users: %13, %11
+  %11 = apply %5<()>(%10, %9, %1) : $@convention(method) <τ_0_0> (@owned @callee_owned (UnsafeBufferPointer<UInt8>) -> @out τ_0_0, StaticString) -> @out τ_0_0, scope 13
+  %12 = tuple (), scope 13
+  dealloc_stack %10 : $*(), scope 13              // id: %13
+  %14 = tuple (), scope 13                        // user: %15
+  return %14 : $(), scope 13                      // id: %15
+}
+
+
+// _ContiguousArrayStorageBase.init(_doNotCallMeBase : ()) -> _ContiguousArrayStorageBase
+sil hidden_external [fragile] @_TFCs27_ContiguousArrayStorageBasecfT16_doNotCallMeBaseT__S_ : $@convention(method) (@owned _ContiguousArrayStorageBase) -> @owned _ContiguousArrayStorageBase
+
+
+// _ContiguousArrayStorage._withVerbatimBridgedUnsafeBufferImpl((UnsafeBufferPointer<AnyObject>) throws -> ()) throws -> ()
+sil hidden_external [fragile] @_TFCs23_ContiguousArrayStorage36_withVerbatimBridgedUnsafeBufferImplfzFzGSRPs9AnyObject__T_T_ : $@convention(method) <Element> (@owned @callee_owned (UnsafeBufferPointer<AnyObject>) -> @error Error, @guaranteed _ContiguousArrayStorage<Element>) -> @error Error
+
+sil_scope 14 {  parent @_TFFCs23_ContiguousArrayStorage32_withVerbatimBridgedUnsafeBufferurFzFzGSRPs9AnyObject__qd__GSqqd___U_FzGSRPS0___T_ : $@convention(thin) <τ_0_0><τ_1_0> (UnsafeBufferPointer<AnyObject>, @inout_aliasable Optional<τ_1_0>, @owned @callee_owned (UnsafeBufferPointer<AnyObject>) -> (@out τ_1_0, @error Error)) -> @error Error }
+
+// _ContiguousArrayStorage.(_withVerbatimBridgedUnsafeBuffer<A> ((UnsafeBufferPointer<AnyObject>) throws -> A1) throws -> A1?).(closure #1)
+sil shared_external [fragile] @_TFFCs23_ContiguousArrayStorage32_withVerbatimBridgedUnsafeBufferurFzFzGSRPs9AnyObject__qd__GSqqd___U_FzGSRPS0___T_ : $@convention(thin) <Element><R> (UnsafeBufferPointer<AnyObject>, @inout_aliasable Optional<R>, @owned @callee_owned (UnsafeBufferPointer<AnyObject>) -> (@out R, @error Error)) -> @error Error {
+// %0                                             // user: %6
+// %1                                             // user: %13
+// %2                                             // users: %15, %9, %6, %5
+bb0(%0 : $UnsafeBufferPointer<AnyObject>, %1 : $*Optional<R>, %2 : $@callee_owned (UnsafeBufferPointer<AnyObject>) -> (@out R, @error Error)):
+  %3 = alloc_stack $Optional<R>, scope 14         // users: %14, %13, %12, %8, %4
+  %4 = init_enum_data_addr %3 : $*Optional<R>, #Optional.some!enumelt.1, scope 14 // user: %6
+  strong_retain %2 : $@callee_owned (UnsafeBufferPointer<AnyObject>) -> (@out R, @error Error), scope 14 // id: %5
+  try_apply %2(%4, %0) : $@callee_owned (UnsafeBufferPointer<AnyObject>) -> (@out R, @error Error), normal bb2, error bb1, scope 14 // id: %6
+
+// %7                                             // user: %10
+bb1(%7 : $Error):                                 // Preds: bb0
+  dealloc_stack %3 : $*Optional<R>, scope 14      // id: %8
+  strong_release %2 : $@callee_owned (UnsafeBufferPointer<AnyObject>) -> (@out R, @error Error), scope 14 // id: %9
+  throw %7 : $Error, scope 14                     // id: %10
+
+bb2(%11 : $()):                                   // Preds: bb0
+  inject_enum_addr %3 : $*Optional<R>, #Optional.some!enumelt.1, scope 14 // id: %12
+  copy_addr [take] %3 to %1 : $*Optional<R>, scope 14 // id: %13
+  dealloc_stack %3 : $*Optional<R>, scope 14      // id: %14
+  strong_release %2 : $@callee_owned (UnsafeBufferPointer<AnyObject>) -> (@out R, @error Error), scope 14 // id: %15
+  %16 = tuple (), scope 14                        // user: %17
+  return %16 : $(), scope 14                      // id: %17
+}
+
+
+// _isBridgedVerbatimToObjectiveC<A> (A.Type) -> Bool
+sil [fragile] @_TFs30_isBridgedVerbatimToObjectiveCurFMxSb : $@convention(thin) <T> (@thick T.Type) -> Bool
+
+
+// _ArrayBody.count.getter
+sil hidden_external [fragile] @_TFVs10_ArrayBodyg5countSi : $@convention(method) (_ArrayBody) -> Int
+
+
+// _HeapBuffer.init(AnyObject.Type, A, Int) -> _HeapBuffer<A, B>
+sil [fragile] @_TFVs11_HeapBufferCfTPMPs9AnyObject_xSi_GS_xq__ : $@convention(method) <Value, Element> (@thick AnyObject.Type, @in Value, Int, @thin _HeapBuffer<Value, Element>.Type) -> @owned _HeapBuffer<Value, Element>
+
+
+// _HeapBuffer.baseAddress.getter
+sil [fragile] @_TFVs11_HeapBufferg11baseAddressGSpq__ : $@convention(method) <Value, Element> (@guaranteed _HeapBuffer<Value, Element>) -> UnsafeMutablePointer<Element>
+
+
+// _ContiguousArrayStorage._elementPointer.getter
+sil hidden_external [fragile] @_TFCs23_ContiguousArrayStorageg15_elementPointerGSpx_ : $@convention(method) <Element> (@guaranteed _ContiguousArrayStorage<Element>) -> UnsafeMutablePointer<Element>
+
+
+// UnsafeMutablePointer.initialize(to : A, count : Int) -> ()
+sil [fragile] @_TFSp10initializefT2tox5countSi_T_ : $@convention(method) <Pointee> (@in Pointee, Int, UnsafeMutablePointer<Pointee>) -> ()
+
+
+// _bridgeAnythingToObjectiveC<A> (A) -> AnyObject
+sil [fragile] @_TFs27_bridgeAnythingToObjectiveCurFxPs9AnyObject_ : $@convention(thin) <T> (@in T) -> @owned AnyObject
+
+
+// UnsafeMutablePointer.(initialize(to : A, count : Int) -> ()).(default argument 1)
+sil [fragile] @_TIFSp10initializeFT2tox5countSi_T_A0_ : $@convention(thin) <Pointee> () -> Int
+
+
+// _ContiguousArrayStorage.deinit
+sil hidden_external [fragile] @_TFCs23_ContiguousArrayStoraged : $@convention(method) <Element> (@guaranteed _ContiguousArrayStorage<Element>) -> @owned Builtin.NativeObject
+
+
+// _HeapBufferStorage.init() -> _HeapBufferStorage<A, B>
+sil [fragile] @_TFCs18_HeapBufferStoragecfT_GS_xq__ : $@convention(method) <Value, Element> (@owned _HeapBufferStorage<Value, Element>) -> @owned _HeapBufferStorage<Value, Element>
+
+
+// _HeapBufferStorage.__deallocating_deinit
+sil [fragile] @_TFCs18_HeapBufferStorageD : $@convention(method) <Value, Element> (@owned _HeapBufferStorage<Value, Element>) -> ()
+
+
+// _HeapBufferStorage.deinit
+sil [fragile] @_TFCs18_HeapBufferStoraged : $@convention(method) <Value, Element> (@guaranteed _HeapBufferStorage<Value, Element>) -> @owned Builtin.NativeObject
+
+sil_scope 15 {  parent @_TFFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU0_FGSRVs5UInt8_T_U_FGSRS1__T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>) -> () }
+
+// (_unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never).(closure #2).(closure #1)
+sil shared_external [fragile] @_TFFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU0_FGSRVs5UInt8_T_U_FGSRS1__T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>) -> () {
+// %0                                             // users: %21, %17
+// %1                                             // users: %8, %4
+bb0(%0 : $UnsafeBufferPointer<UInt8>, %1 : $UnsafeBufferPointer<UInt8>):
+  // function_ref _swift_stdlib_reportUnimplementedInitializer
+  %2 = function_ref @_swift_stdlib_reportUnimplementedInitializer : $@convention(c) (UnsafePointer<UInt8>, Int32, UnsafePointer<UInt8>, Int32, UInt32) -> (), scope 15 // user: %31
+  // function_ref UnsafeBufferPointer.baseAddress.getter
+  %3 = function_ref @_TFSRg11baseAddressGSqGSPx__ : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Optional<UnsafePointer<τ_0_0>>, scope 15 // user: %4
+  %4 = apply %3<UInt8>(%1) : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Optional<UnsafePointer<τ_0_0>>, scope 15 // users: %6, %5
+  switch_enum %4 : $Optional<UnsafePointer<UInt8>>, case #Optional.none!enumelt: bb20, default bb1, scope 15 // id: %5
+
+bb1:                                              // Preds: bb0
+  %6 = unchecked_enum_data %4 : $Optional<UnsafePointer<UInt8>>, #Optional.some!enumelt.1, scope 15 // user: %31
+  // function_ref UnsafeBufferPointer.count.getter
+  %7 = function_ref @_TFSRg5countSi : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Int, scope 15 // user: %8
+  %8 = apply %7<UInt8>(%1) : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Int, scope 15 // user: %9
+  %9 = struct_extract %8 : $Int, #Int._value, scope 15 // user: %10
+  %10 = builtin "s_to_s_checked_trunc_Int64_Int32"(%9 : $Builtin.Int64) : $(Builtin.Int32, Builtin.Int1), scope 15 // users: %12, %11
+  %11 = tuple_extract %10 : $(Builtin.Int32, Builtin.Int1), 0, scope 15 // user: %15
+  %12 = tuple_extract %10 : $(Builtin.Int32, Builtin.Int1), 1, scope 15 // user: %13
+  cond_fail %12 : $Builtin.Int1, scope 15         // id: %13
+  %14 = tuple (), scope 15
+  %15 = struct $Int32 (%11 : $Builtin.Int32), scope 15 // user: %31
+  // function_ref UnsafeBufferPointer.baseAddress.getter
+  %16 = function_ref @_TFSRg11baseAddressGSqGSPx__ : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Optional<UnsafePointer<τ_0_0>>, scope 15 // user: %17
+  %17 = apply %16<UInt8>(%0) : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Optional<UnsafePointer<τ_0_0>>, scope 15 // users: %19, %18
+  switch_enum %17 : $Optional<UnsafePointer<UInt8>>, case #Optional.none!enumelt: bb3, default bb2, scope 15 // id: %18
+
+bb2:                                              // Preds: bb1
+  %19 = unchecked_enum_data %17 : $Optional<UnsafePointer<UInt8>>, #Optional.some!enumelt.1, scope 15 // user: %31
+  // function_ref UnsafeBufferPointer.count.getter
+  %20 = function_ref @_TFSRg5countSi : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Int, scope 15 // user: %21
+  %21 = apply %20<UInt8>(%0) : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Int, scope 15 // user: %22
+  %22 = struct_extract %21 : $Int, #Int._value, scope 15 // user: %23
+  %23 = builtin "s_to_s_checked_trunc_Int64_Int32"(%22 : $Builtin.Int64) : $(Builtin.Int32, Builtin.Int1), scope 15 // users: %25, %24
+  %24 = tuple_extract %23 : $(Builtin.Int32, Builtin.Int1), 0, scope 15 // user: %28
+  %25 = tuple_extract %23 : $(Builtin.Int32, Builtin.Int1), 1, scope 15 // user: %26
+  cond_fail %25 : $Builtin.Int1, scope 15         // id: %26
+  %27 = tuple (), scope 15
+  %28 = struct $Int32 (%24 : $Builtin.Int32), scope 15 // user: %31
+  %29 = integer_literal $Builtin.Int32, 0, scope 15 // user: %30
+  %30 = struct $UInt32 (%29 : $Builtin.Int32), scope 15 // user: %31
+  %31 = apply %2(%6, %15, %19, %28, %30) : $@convention(c) (UnsafePointer<UInt8>, Int32, UnsafePointer<UInt8>, Int32, UInt32) -> (), scope 15
+  %32 = tuple (), scope 15                        // user: %33
+  return %32 : $(), scope 15                      // id: %33
+
+bb3:                                              // Preds: bb1
+  %34 = string_literal utf8 "/Users/ben/Documents/code/swift-sources/swift/stdlib/public/core/AssertCommon.swift", scope 15 // user: %45
+  %35 = integer_literal $Builtin.Word, 83, scope 15 // user: %49
+  %36 = string_literal utf8 "unexpectedly found nil while unwrapping an Optional value", scope 15 // user: %38
+  %37 = integer_literal $Builtin.Word, 57, scope 15 // user: %42
+  %38 = builtin "ptrtoint_Word"(%36 : $Builtin.RawPointer) : $Builtin.Word, scope 15 // user: %42
+  br bb4, scope 15                                // id: %39
+
+bb4:                                              // Preds: bb3
+  %40 = integer_literal $Builtin.Int8, 2, scope 15 // user: %42
+  br bb5, scope 15                                // id: %41
+
+bb5:                                              // Preds: bb4
+  %42 = struct $StaticString (%38 : $Builtin.Word, %37 : $Builtin.Word, %40 : $Builtin.Int8), scope 15 // user: %70
+  br bb6, scope 15                                // id: %43
+
+bb6:                                              // Preds: bb5
+  br bb7, scope 15                                // id: %44
+
+bb7:                                              // Preds: bb6
+  %45 = builtin "ptrtoint_Word"(%34 : $Builtin.RawPointer) : $Builtin.Word, scope 15 // user: %49
+  br bb8, scope 15                                // id: %46
+
+bb8:                                              // Preds: bb7
+  %47 = integer_literal $Builtin.Int8, 2, scope 15 // user: %49
+  br bb9, scope 15                                // id: %48
+
+bb9:                                              // Preds: bb8
+  %49 = struct $StaticString (%45 : $Builtin.Word, %35 : $Builtin.Word, %47 : $Builtin.Int8), scope 15 // user: %70
+  br bb10, scope 15                               // id: %50
+
+bb10:                                             // Preds: bb9
+  %51 = integer_literal $Builtin.Int64, 223, scope 15 // user: %52
+  %52 = struct $UInt (%51 : $Builtin.Int64), scope 15 // user: %70
+  br bb11, scope 15                               // id: %53
+
+bb11:                                             // Preds: bb10
+  br bb12, scope 15                               // id: %54
+
+bb12:                                             // Preds: bb11
+  // function_ref _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %55 = function_ref @_TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 15 // user: %70
+  %56 = string_literal utf8 "fatal error", scope 15 // user: %58
+  %57 = integer_literal $Builtin.Word, 11, scope 15 // user: %62
+  %58 = builtin "ptrtoint_Word"(%56 : $Builtin.RawPointer) : $Builtin.Word, scope 15 // user: %62
+  br bb13, scope 15                               // id: %59
+
+bb13:                                             // Preds: bb12
+  %60 = integer_literal $Builtin.Int8, 2, scope 15 // user: %62
+  br bb14, scope 15                               // id: %61
+
+bb14:                                             // Preds: bb13
+  %62 = struct $StaticString (%58 : $Builtin.Word, %57 : $Builtin.Word, %60 : $Builtin.Int8), scope 15 // user: %70
+  br bb15, scope 15                               // id: %63
+
+bb15:                                             // Preds: bb14
+  br bb16, scope 15                               // id: %64
+
+bb16:                                             // Preds: bb15
+  br bb17, scope 15                               // id: %65
+
+bb17:                                             // Preds: bb16
+  %66 = integer_literal $Builtin.Int32, 1, scope 15 // user: %67
+  %67 = struct $UInt32 (%66 : $Builtin.Int32), scope 15 // user: %70
+  br bb18, scope 15                               // id: %68
+
+bb18:                                             // Preds: bb17
+  br bb19, scope 15                               // id: %69
+
+bb19:                                             // Preds: bb18
+  %70 = apply %55(%62, %42, %49, %52, %67) : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 15
+  unreachable , scope 15                          // id: %71
+
+bb20:                                             // Preds: bb0
+  %72 = string_literal utf8 "/Users/ben/Documents/code/swift-sources/swift/stdlib/public/core/AssertCommon.swift", scope 15 // user: %83
+  %73 = integer_literal $Builtin.Word, 83, scope 15 // user: %87
+  %74 = string_literal utf8 "unexpectedly found nil while unwrapping an Optional value", scope 15 // user: %76
+  %75 = integer_literal $Builtin.Word, 57, scope 15 // user: %80
+  %76 = builtin "ptrtoint_Word"(%74 : $Builtin.RawPointer) : $Builtin.Word, scope 15 // user: %80
+  br bb21, scope 15                               // id: %77
+
+bb21:                                             // Preds: bb20
+  %78 = integer_literal $Builtin.Int8, 2, scope 15 // user: %80
+  br bb22, scope 15                               // id: %79
+
+bb22:                                             // Preds: bb21
+  %80 = struct $StaticString (%76 : $Builtin.Word, %75 : $Builtin.Word, %78 : $Builtin.Int8), scope 15 // user: %108
+  br bb23, scope 15                               // id: %81
+
+bb23:                                             // Preds: bb22
+  br bb24, scope 15                               // id: %82
+
+bb24:                                             // Preds: bb23
+  %83 = builtin "ptrtoint_Word"(%72 : $Builtin.RawPointer) : $Builtin.Word, scope 15 // user: %87
+  br bb25, scope 15                               // id: %84
+
+bb25:                                             // Preds: bb24
+  %85 = integer_literal $Builtin.Int8, 2, scope 15 // user: %87
+  br bb26, scope 15                               // id: %86
+
+bb26:                                             // Preds: bb25
+  %87 = struct $StaticString (%83 : $Builtin.Word, %73 : $Builtin.Word, %85 : $Builtin.Int8), scope 15 // user: %108
+  br bb27, scope 15                               // id: %88
+
+bb27:                                             // Preds: bb26
+  %89 = integer_literal $Builtin.Int64, 222, scope 15 // user: %90
+  %90 = struct $UInt (%89 : $Builtin.Int64), scope 15 // user: %108
+  br bb28, scope 15                               // id: %91
+
+bb28:                                             // Preds: bb27
+  br bb29, scope 15                               // id: %92
+
+bb29:                                             // Preds: bb28
+  // function_ref _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %93 = function_ref @_TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 15 // user: %108
+  %94 = string_literal utf8 "fatal error", scope 15 // user: %96
+  %95 = integer_literal $Builtin.Word, 11, scope 15 // user: %100
+  %96 = builtin "ptrtoint_Word"(%94 : $Builtin.RawPointer) : $Builtin.Word, scope 15 // user: %100
+  br bb30, scope 15                               // id: %97
+
+bb30:                                             // Preds: bb29
+  %98 = integer_literal $Builtin.Int8, 2, scope 15 // user: %100
+  br bb31, scope 15                               // id: %99
+
+bb31:                                             // Preds: bb30
+  %100 = struct $StaticString (%96 : $Builtin.Word, %95 : $Builtin.Word, %98 : $Builtin.Int8), scope 15 // user: %108
+  br bb32, scope 15                               // id: %101
+
+bb32:                                             // Preds: bb31
+  br bb33, scope 15                               // id: %102
+
+bb33:                                             // Preds: bb32
+  br bb34, scope 15                               // id: %103
+
+bb34:                                             // Preds: bb33
+  %104 = integer_literal $Builtin.Int32, 1, scope 15 // user: %105
+  %105 = struct $UInt32 (%104 : $Builtin.Int32), scope 15 // user: %108
+  br bb35, scope 15                               // id: %106
+
+bb35:                                             // Preds: bb34
+  br bb36, scope 15                               // id: %107
+
+bb36:                                             // Preds: bb35
+  %108 = apply %93(%100, %80, %87, %90, %105) : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 15
+  unreachable , scope 15                          // id: %109
+}
+
+sil_scope 16 {  parent @_TFFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU_FGSRVs5UInt8_T_U_FGSRS1__T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString, UnsafeBufferPointer<UInt8>, UInt, UInt) -> () }
+
+// (_unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never).(closure #1).(closure #1)
+sil shared_external [fragile] @_TFFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU_FGSRVs5UInt8_T_U_FGSRS1__T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString, UnsafeBufferPointer<UInt8>, UInt, UInt) -> () {
+// %0                                             // user: %7
+// %1                                             // user: %11
+// %2                                             // user: %7
+// %3                                             // user: %7
+// %4                                             // user: %7
+bb0(%0 : $UnsafeBufferPointer<UInt8>, %1 : $StaticString, %2 : $UnsafeBufferPointer<UInt8>, %3 : $UInt, %4 : $UInt):
+  // function_ref StaticString.withUTF8Buffer<A> ((UnsafeBufferPointer<UInt8>) -> A) -> A
+  %5 = function_ref @_TFVs12StaticString14withUTF8BufferurfFGSRVs5UInt8_xx : $@convention(method) <τ_0_0> (@owned @callee_owned (UnsafeBufferPointer<UInt8>) -> @out τ_0_0, StaticString) -> @out τ_0_0, scope 16 // user: %11
+  // function_ref (_unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never).(closure #1).(closure #1).(closure #1)
+  %6 = function_ref @_TFFFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU_FGSRVs5UInt8_T_U_FGSRS1__T_U_FGSRS1__T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>, UInt, UInt) -> (), scope 16 // user: %7
+  %7 = partial_apply %6(%2, %0, %3, %4) : $@convention(thin) (UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>, UInt, UInt) -> (), scope 16 // user: %9
+  // function_ref thunk
+  %8 = function_ref @_TTRXFo_dGSRVs5UInt8___XFo_dGSRS___iT__ : $@convention(thin) (UnsafeBufferPointer<UInt8>, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out (), scope 16 // user: %9
+  %9 = partial_apply %8(%7) : $@convention(thin) (UnsafeBufferPointer<UInt8>, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out (), scope 16 // user: %11
+  %10 = alloc_stack $(), scope 16                 // users: %13, %11
+  %11 = apply %5<()>(%10, %9, %1) : $@convention(method) <τ_0_0> (@owned @callee_owned (UnsafeBufferPointer<UInt8>) -> @out τ_0_0, StaticString) -> @out τ_0_0, scope 16
+  %12 = tuple (), scope 16
+  dealloc_stack %10 : $*(), scope 16              // id: %13
+  %14 = tuple (), scope 16                        // user: %15
+  return %14 : $(), scope 16                      // id: %15
+}
+
+sil_scope 17 {  parent @_TFFFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU_FGSRVs5UInt8_T_U_FGSRS1__T_U_FGSRS1__T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>, UInt, UInt) -> () }
+
+// (_unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never).(closure #1).(closure #1).(closure #1)
+sil shared_external [fragile] @_TFFFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU_FGSRVs5UInt8_T_U_FGSRS1__T_U_FGSRS1__T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>, UInt, UInt) -> () {
+// %0                                             // users: %37, %33
+// %1                                             // users: %11, %7
+// %2                                             // users: %24, %20
+// %3                                             // user: %45
+// %4                                             // user: %52
+bb0(%0 : $UnsafeBufferPointer<UInt8>, %1 : $UnsafeBufferPointer<UInt8>, %2 : $UnsafeBufferPointer<UInt8>, %3 : $UInt, %4 : $UInt):
+  // function_ref _swift_stdlib_reportUnimplementedInitializerInFile
+  %5 = function_ref @_swift_stdlib_reportUnimplementedInitializerInFile : $@convention(c) (UnsafePointer<UInt8>, Int32, UnsafePointer<UInt8>, Int32, UnsafePointer<UInt8>, Int32, UInt32, UInt32, UInt32) -> (), scope 17 // user: %61
+  // function_ref UnsafeBufferPointer.baseAddress.getter
+  %6 = function_ref @_TFSRg11baseAddressGSqGSPx__ : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Optional<UnsafePointer<τ_0_0>>, scope 17 // user: %7
+  %7 = apply %6<UInt8>(%1) : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Optional<UnsafePointer<τ_0_0>>, scope 17 // users: %9, %8
+  switch_enum %7 : $Optional<UnsafePointer<UInt8>>, case #Optional.none!enumelt: bb38, default bb1, scope 17 // id: %8
+
+bb1:                                              // Preds: bb0
+  %9 = unchecked_enum_data %7 : $Optional<UnsafePointer<UInt8>>, #Optional.some!enumelt.1, scope 17 // user: %61
+  // function_ref UnsafeBufferPointer.count.getter
+  %10 = function_ref @_TFSRg5countSi : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Int, scope 17 // user: %11
+  %11 = apply %10<UInt8>(%1) : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Int, scope 17 // user: %12
+  %12 = struct_extract %11 : $Int, #Int._value, scope 17 // user: %13
+  %13 = builtin "s_to_s_checked_trunc_Int64_Int32"(%12 : $Builtin.Int64) : $(Builtin.Int32, Builtin.Int1), scope 17 // users: %15, %14
+  %14 = tuple_extract %13 : $(Builtin.Int32, Builtin.Int1), 0, scope 17 // user: %18
+  %15 = tuple_extract %13 : $(Builtin.Int32, Builtin.Int1), 1, scope 17 // user: %16
+  cond_fail %15 : $Builtin.Int1, scope 17         // id: %16
+  %17 = tuple (), scope 17
+  %18 = struct $Int32 (%14 : $Builtin.Int32), scope 17 // user: %61
+  // function_ref UnsafeBufferPointer.baseAddress.getter
+  %19 = function_ref @_TFSRg11baseAddressGSqGSPx__ : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Optional<UnsafePointer<τ_0_0>>, scope 17 // user: %20
+  %20 = apply %19<UInt8>(%2) : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Optional<UnsafePointer<τ_0_0>>, scope 17 // users: %22, %21
+  switch_enum %20 : $Optional<UnsafePointer<UInt8>>, case #Optional.none!enumelt: bb21, default bb2, scope 17 // id: %21
+
+bb2:                                              // Preds: bb1
+  %22 = unchecked_enum_data %20 : $Optional<UnsafePointer<UInt8>>, #Optional.some!enumelt.1, scope 17 // user: %61
+  // function_ref UnsafeBufferPointer.count.getter
+  %23 = function_ref @_TFSRg5countSi : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Int, scope 17 // user: %24
+  %24 = apply %23<UInt8>(%2) : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Int, scope 17 // user: %25
+  %25 = struct_extract %24 : $Int, #Int._value, scope 17 // user: %26
+  %26 = builtin "s_to_s_checked_trunc_Int64_Int32"(%25 : $Builtin.Int64) : $(Builtin.Int32, Builtin.Int1), scope 17 // users: %28, %27
+  %27 = tuple_extract %26 : $(Builtin.Int32, Builtin.Int1), 0, scope 17 // user: %31
+  %28 = tuple_extract %26 : $(Builtin.Int32, Builtin.Int1), 1, scope 17 // user: %29
+  cond_fail %28 : $Builtin.Int1, scope 17         // id: %29
+  %30 = tuple (), scope 17
+  %31 = struct $Int32 (%27 : $Builtin.Int32), scope 17 // user: %61
+  // function_ref UnsafeBufferPointer.baseAddress.getter
+  %32 = function_ref @_TFSRg11baseAddressGSqGSPx__ : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Optional<UnsafePointer<τ_0_0>>, scope 17 // user: %33
+  %33 = apply %32<UInt8>(%0) : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Optional<UnsafePointer<τ_0_0>>, scope 17 // users: %35, %34
+  switch_enum %33 : $Optional<UnsafePointer<UInt8>>, case #Optional.none!enumelt: bb4, default bb3, scope 17 // id: %34
+
+bb3:                                              // Preds: bb2
+  %35 = unchecked_enum_data %33 : $Optional<UnsafePointer<UInt8>>, #Optional.some!enumelt.1, scope 17 // user: %61
+  // function_ref UnsafeBufferPointer.count.getter
+  %36 = function_ref @_TFSRg5countSi : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Int, scope 17 // user: %37
+  %37 = apply %36<UInt8>(%0) : $@convention(method) <τ_0_0> (UnsafeBufferPointer<τ_0_0>) -> Int, scope 17 // user: %38
+  %38 = struct_extract %37 : $Int, #Int._value, scope 17 // user: %39
+  %39 = builtin "s_to_s_checked_trunc_Int64_Int32"(%38 : $Builtin.Int64) : $(Builtin.Int32, Builtin.Int1), scope 17 // users: %41, %40
+  %40 = tuple_extract %39 : $(Builtin.Int32, Builtin.Int1), 0, scope 17 // user: %44
+  %41 = tuple_extract %39 : $(Builtin.Int32, Builtin.Int1), 1, scope 17 // user: %42
+  cond_fail %41 : $Builtin.Int1, scope 17         // id: %42
+  %43 = tuple (), scope 17
+  %44 = struct $Int32 (%40 : $Builtin.Int32), scope 17 // user: %61
+  %45 = struct_extract %3 : $UInt, #UInt._value, scope 17 // user: %46
+  %46 = builtin "u_to_u_checked_trunc_Int64_Int32"(%45 : $Builtin.Int64) : $(Builtin.Int32, Builtin.Int1), scope 17 // users: %48, %47
+  %47 = tuple_extract %46 : $(Builtin.Int32, Builtin.Int1), 0, scope 17 // user: %51
+  %48 = tuple_extract %46 : $(Builtin.Int32, Builtin.Int1), 1, scope 17 // user: %49
+  cond_fail %48 : $Builtin.Int1, scope 17         // id: %49
+  %50 = tuple (), scope 17
+  %51 = struct $UInt32 (%47 : $Builtin.Int32), scope 17 // user: %61
+  %52 = struct_extract %4 : $UInt, #UInt._value, scope 17 // user: %53
+  %53 = builtin "u_to_u_checked_trunc_Int64_Int32"(%52 : $Builtin.Int64) : $(Builtin.Int32, Builtin.Int1), scope 17 // users: %55, %54
+  %54 = tuple_extract %53 : $(Builtin.Int32, Builtin.Int1), 0, scope 17 // user: %58
+  %55 = tuple_extract %53 : $(Builtin.Int32, Builtin.Int1), 1, scope 17 // user: %56
+  cond_fail %55 : $Builtin.Int1, scope 17         // id: %56
+  %57 = tuple (), scope 17
+  %58 = struct $UInt32 (%54 : $Builtin.Int32), scope 17 // user: %61
+  %59 = integer_literal $Builtin.Int32, 0, scope 17 // user: %60
+  %60 = struct $UInt32 (%59 : $Builtin.Int32), scope 17 // user: %61
+  %61 = apply %5(%9, %18, %22, %31, %35, %44, %51, %58, %60) : $@convention(c) (UnsafePointer<UInt8>, Int32, UnsafePointer<UInt8>, Int32, UnsafePointer<UInt8>, Int32, UInt32, UInt32, UInt32) -> (), scope 17
+  %62 = tuple (), scope 17                        // user: %63
+  return %62 : $(), scope 17                      // id: %63
+
+bb4:                                              // Preds: bb2
+  %64 = string_literal utf8 "/Users/ben/Documents/code/swift-sources/swift/stdlib/public/core/AssertCommon.swift", scope 17 // user: %75
+  %65 = integer_literal $Builtin.Word, 83, scope 17 // user: %79
+  %66 = string_literal utf8 "unexpectedly found nil while unwrapping an Optional value", scope 17 // user: %68
+  %67 = integer_literal $Builtin.Word, 57, scope 17 // user: %72
+  %68 = builtin "ptrtoint_Word"(%66 : $Builtin.RawPointer) : $Builtin.Word, scope 17 // user: %72
+  br bb5, scope 17                                // id: %69
+
+bb5:                                              // Preds: bb4
+  %70 = integer_literal $Builtin.Int8, 2, scope 17 // user: %72
+  br bb6, scope 17                                // id: %71
+
+bb6:                                              // Preds: bb5
+  %72 = struct $StaticString (%68 : $Builtin.Word, %67 : $Builtin.Word, %70 : $Builtin.Int8), scope 17 // user: %100
+  br bb7, scope 17                                // id: %73
+
+bb7:                                              // Preds: bb6
+  br bb8, scope 17                                // id: %74
+
+bb8:                                              // Preds: bb7
+  %75 = builtin "ptrtoint_Word"(%64 : $Builtin.RawPointer) : $Builtin.Word, scope 17 // user: %79
+  br bb9, scope 17                                // id: %76
+
+bb9:                                              // Preds: bb8
+  %77 = integer_literal $Builtin.Int8, 2, scope 17 // user: %79
+  br bb10, scope 17                               // id: %78
+
+bb10:                                             // Preds: bb9
+  %79 = struct $StaticString (%75 : $Builtin.Word, %65 : $Builtin.Word, %77 : $Builtin.Int8), scope 17 // user: %100
+  br bb11, scope 17                               // id: %80
+
+bb11:                                             // Preds: bb10
+  %81 = integer_literal $Builtin.Int64, 210, scope 17 // user: %82
+  %82 = struct $UInt (%81 : $Builtin.Int64), scope 17 // user: %100
+  br bb12, scope 17                               // id: %83
+
+bb12:                                             // Preds: bb11
+  br bb13, scope 17                               // id: %84
+
+bb13:                                             // Preds: bb12
+  // function_ref _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %85 = function_ref @_TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 17 // user: %100
+  %86 = string_literal utf8 "fatal error", scope 17 // user: %88
+  %87 = integer_literal $Builtin.Word, 11, scope 17 // user: %92
+  %88 = builtin "ptrtoint_Word"(%86 : $Builtin.RawPointer) : $Builtin.Word, scope 17 // user: %92
+  br bb14, scope 17                               // id: %89
+
+bb14:                                             // Preds: bb13
+  %90 = integer_literal $Builtin.Int8, 2, scope 17 // user: %92
+  br bb15, scope 17                               // id: %91
+
+bb15:                                             // Preds: bb14
+  %92 = struct $StaticString (%88 : $Builtin.Word, %87 : $Builtin.Word, %90 : $Builtin.Int8), scope 17 // user: %100
+  br bb16, scope 17                               // id: %93
+
+bb16:                                             // Preds: bb15
+  br bb17, scope 17                               // id: %94
+
+bb17:                                             // Preds: bb16
+  br bb18, scope 17                               // id: %95
+
+bb18:                                             // Preds: bb17
+  %96 = integer_literal $Builtin.Int32, 1, scope 17 // user: %97
+  %97 = struct $UInt32 (%96 : $Builtin.Int32), scope 17 // user: %100
+  br bb19, scope 17                               // id: %98
+
+bb19:                                             // Preds: bb18
+  br bb20, scope 17                               // id: %99
+
+bb20:                                             // Preds: bb19
+  %100 = apply %85(%92, %72, %79, %82, %97) : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 17
+  unreachable , scope 17                          // id: %101
+
+bb21:                                             // Preds: bb1
+  %102 = string_literal utf8 "/Users/ben/Documents/code/swift-sources/swift/stdlib/public/core/AssertCommon.swift", scope 17 // user: %113
+  %103 = integer_literal $Builtin.Word, 83, scope 17 // user: %117
+  %104 = string_literal utf8 "unexpectedly found nil while unwrapping an Optional value", scope 17 // user: %106
+  %105 = integer_literal $Builtin.Word, 57, scope 17 // user: %110
+  %106 = builtin "ptrtoint_Word"(%104 : $Builtin.RawPointer) : $Builtin.Word, scope 17 // user: %110
+  br bb22, scope 17                               // id: %107
+
+bb22:                                             // Preds: bb21
+  %108 = integer_literal $Builtin.Int8, 2, scope 17 // user: %110
+  br bb23, scope 17                               // id: %109
+
+bb23:                                             // Preds: bb22
+  %110 = struct $StaticString (%106 : $Builtin.Word, %105 : $Builtin.Word, %108 : $Builtin.Int8), scope 17 // user: %138
+  br bb24, scope 17                               // id: %111
+
+bb24:                                             // Preds: bb23
+  br bb25, scope 17                               // id: %112
+
+bb25:                                             // Preds: bb24
+  %113 = builtin "ptrtoint_Word"(%102 : $Builtin.RawPointer) : $Builtin.Word, scope 17 // user: %117
+  br bb26, scope 17                               // id: %114
+
+bb26:                                             // Preds: bb25
+  %115 = integer_literal $Builtin.Int8, 2, scope 17 // user: %117
+  br bb27, scope 17                               // id: %116
+
+bb27:                                             // Preds: bb26
+  %117 = struct $StaticString (%113 : $Builtin.Word, %103 : $Builtin.Word, %115 : $Builtin.Int8), scope 17 // user: %138
+  br bb28, scope 17                               // id: %118
+
+bb28:                                             // Preds: bb27
+  %119 = integer_literal $Builtin.Int64, 209, scope 17 // user: %120
+  %120 = struct $UInt (%119 : $Builtin.Int64), scope 17 // user: %138
+  br bb29, scope 17                               // id: %121
+
+bb29:                                             // Preds: bb28
+  br bb30, scope 17                               // id: %122
+
+bb30:                                             // Preds: bb29
+  // function_ref _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %123 = function_ref @_TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 17 // user: %138
+  %124 = string_literal utf8 "fatal error", scope 17 // user: %126
+  %125 = integer_literal $Builtin.Word, 11, scope 17 // user: %130
+  %126 = builtin "ptrtoint_Word"(%124 : $Builtin.RawPointer) : $Builtin.Word, scope 17 // user: %130
+  br bb31, scope 17                               // id: %127
+
+bb31:                                             // Preds: bb30
+  %128 = integer_literal $Builtin.Int8, 2, scope 17 // user: %130
+  br bb32, scope 17                               // id: %129
+
+bb32:                                             // Preds: bb31
+  %130 = struct $StaticString (%126 : $Builtin.Word, %125 : $Builtin.Word, %128 : $Builtin.Int8), scope 17 // user: %138
+  br bb33, scope 17                               // id: %131
+
+bb33:                                             // Preds: bb32
+  br bb34, scope 17                               // id: %132
+
+bb34:                                             // Preds: bb33
+  br bb35, scope 17                               // id: %133
+
+bb35:                                             // Preds: bb34
+  %134 = integer_literal $Builtin.Int32, 1, scope 17 // user: %135
+  %135 = struct $UInt32 (%134 : $Builtin.Int32), scope 17 // user: %138
+  br bb36, scope 17                               // id: %136
+
+bb36:                                             // Preds: bb35
+  br bb37, scope 17                               // id: %137
+
+bb37:                                             // Preds: bb36
+  %138 = apply %123(%130, %110, %117, %120, %135) : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 17
+  unreachable , scope 17                          // id: %139
+
+bb38:                                             // Preds: bb0
+  %140 = string_literal utf8 "/Users/ben/Documents/code/swift-sources/swift/stdlib/public/core/AssertCommon.swift", scope 17 // user: %151
+  %141 = integer_literal $Builtin.Word, 83, scope 17 // user: %155
+  %142 = string_literal utf8 "unexpectedly found nil while unwrapping an Optional value", scope 17 // user: %144
+  %143 = integer_literal $Builtin.Word, 57, scope 17 // user: %148
+  %144 = builtin "ptrtoint_Word"(%142 : $Builtin.RawPointer) : $Builtin.Word, scope 17 // user: %148
+  br bb39, scope 17                               // id: %145
+
+bb39:                                             // Preds: bb38
+  %146 = integer_literal $Builtin.Int8, 2, scope 17 // user: %148
+  br bb40, scope 17                               // id: %147
+
+bb40:                                             // Preds: bb39
+  %148 = struct $StaticString (%144 : $Builtin.Word, %143 : $Builtin.Word, %146 : $Builtin.Int8), scope 17 // user: %176
+  br bb41, scope 17                               // id: %149
+
+bb41:                                             // Preds: bb40
+  br bb42, scope 17                               // id: %150
+
+bb42:                                             // Preds: bb41
+  %151 = builtin "ptrtoint_Word"(%140 : $Builtin.RawPointer) : $Builtin.Word, scope 17 // user: %155
+  br bb43, scope 17                               // id: %152
+
+bb43:                                             // Preds: bb42
+  %153 = integer_literal $Builtin.Int8, 2, scope 17 // user: %155
+  br bb44, scope 17                               // id: %154
+
+bb44:                                             // Preds: bb43
+  %155 = struct $StaticString (%151 : $Builtin.Word, %141 : $Builtin.Word, %153 : $Builtin.Int8), scope 17 // user: %176
+  br bb45, scope 17                               // id: %156
+
+bb45:                                             // Preds: bb44
+  %157 = integer_literal $Builtin.Int64, 208, scope 17 // user: %158
+  %158 = struct $UInt (%157 : $Builtin.Int64), scope 17 // user: %176
+  br bb46, scope 17                               // id: %159
+
+bb46:                                             // Preds: bb45
+  br bb47, scope 17                               // id: %160
+
+bb47:                                             // Preds: bb46
+  // function_ref _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %161 = function_ref @_TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 17 // user: %176
+  %162 = string_literal utf8 "fatal error", scope 17 // user: %164
+  %163 = integer_literal $Builtin.Word, 11, scope 17 // user: %168
+  %164 = builtin "ptrtoint_Word"(%162 : $Builtin.RawPointer) : $Builtin.Word, scope 17 // user: %168
+  br bb48, scope 17                               // id: %165
+
+bb48:                                             // Preds: bb47
+  %166 = integer_literal $Builtin.Int8, 2, scope 17 // user: %168
+  br bb49, scope 17                               // id: %167
+
+bb49:                                             // Preds: bb48
+  %168 = struct $StaticString (%164 : $Builtin.Word, %163 : $Builtin.Word, %166 : $Builtin.Int8), scope 17 // user: %176
+  br bb50, scope 17                               // id: %169
+
+bb50:                                             // Preds: bb49
+  br bb51, scope 17                               // id: %170
+
+bb51:                                             // Preds: bb50
+  br bb52, scope 17                               // id: %171
+
+bb52:                                             // Preds: bb51
+  %172 = integer_literal $Builtin.Int32, 1, scope 17 // user: %173
+  %173 = struct $UInt32 (%172 : $Builtin.Int32), scope 17 // user: %176
+  br bb53, scope 17                               // id: %174
+
+bb53:                                             // Preds: bb52
+  br bb54, scope 17                               // id: %175
+
+bb54:                                             // Preds: bb53
+  %176 = apply %161(%168, %148, %155, %158, %173) : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 17
+  unreachable , scope 17                          // id: %177
+}
+
+
+// _swift_stdlib_reportUnimplementedInitializerInFile
+sil [clang _swift_stdlib_reportUnimplementedInitializerInFile] @_swift_stdlib_reportUnimplementedInitializerInFile : $@convention(c) (UnsafePointer<UInt8>, Int32, UnsafePointer<UInt8>, Int32, UnsafePointer<UInt8>, Int32, UInt32, UInt32, UInt32) -> ()
+
+
+// UnsafeBufferPointer.baseAddress.getter
+sil [fragile] @_TFSRg11baseAddressGSqGSPx__ : $@convention(method) <Element> (UnsafeBufferPointer<Element>) -> Optional<UnsafePointer<Element>>
+
+
+// UnsafeBufferPointer.count.getter
+sil [fragile] @_TFSRg5countSi : $@convention(method) <Element> (UnsafeBufferPointer<Element>) -> Int
+
+
+// _swift_stdlib_reportUnimplementedInitializer
+sil [clang _swift_stdlib_reportUnimplementedInitializer] @_swift_stdlib_reportUnimplementedInitializer : $@convention(c) (UnsafePointer<UInt8>, Int32, UnsafePointer<UInt8>, Int32, UInt32) -> ()
+
+
+// Array.append<A where ...> (contentsOf : A1) -> ()
+sil [fragile] @_TFSa6appenduRd__s10CollectionxzWd__8Iterator7Element_rfT10contentsOfqd___T_ : $@convention(method) <Element><C where C : Collection, Element == C.Iterator.Element> (@in C, @inout Array<Element>) -> ()
+
+
+// _BridgeStorage.init(native : A) -> _BridgeStorage<A, B>
+sil [fragile] [always_inline] @_TFVs14_BridgeStorageCfT6nativex_GS_xq__ : $@convention(method) <NativeClass, ObjCClass where NativeClass : AnyObject, ObjCClass : AnyObject> (@owned NativeClass, @thin _BridgeStorage<NativeClass, ObjCClass>.Type) -> @owned _BridgeStorage<NativeClass, ObjCClass>
+
+
+// _emptyArrayStorage.getter
+sil hidden_external [fragile] @_TFsg18_emptyArrayStorageCs18_EmptyArrayStorage : $@convention(thin) () -> @owned _EmptyArrayStorage
+
+
+// numericCast<A, B where ...> (A) -> B
+sil [fragile] @_TFs11numericCastu0_Rxs14_SignedInteger_S_rFxq_ : $@convention(thin) <T, U where T : _SignedInteger, U : _SignedInteger> (@in T) -> @out U
+
+
+// Array.count.getter
+sil [fragile] @_TFSag5countSi : $@convention(method) <Element> (@guaranteed Array<Element>) -> Int
+
+
+// Array.capacity.getter
+sil [fragile] @_TFSag8capacitySi : $@convention(method) <Element> (@guaranteed Array<Element>) -> Int
+
+
+// Array.reserveCapacity(Int) -> ()
+sil [fragile] [_semantics "array.mutate_unknown"] @_TFSa15reserveCapacityfSiT_ : $@convention(method) <Element> (Int, @inout Array<Element>) -> ()
+
+
+// max<A where ...> (A, A) -> A
+sil [fragile] @_TFs3maxuRxs10ComparablerFTxx_x : $@convention(thin) <T where T : Comparable> (@in T, @in T) -> @out T
+
+
+// _growArrayCapacity(Int) -> Int
+sil hidden_external [fragile] @_TFs18_growArrayCapacityFSiSi : $@convention(thin) (Int) -> Int
+
+
+// UnsafeMutablePointer.initialize<A where ...> (from : A1) -> ()
+sil [fragile] @_TFSp10initializeuRd__s10CollectionxzWd__8Iterator7Element_rfT4fromqd___T_ : $@convention(method) <Pointee><C where C : Collection, Pointee == C.Iterator.Element> (@in C, UnsafeMutablePointer<Pointee>) -> ()
+
+
+// _ArrayBuffer.firstElementAddress.getter
+sil [fragile] @_TFVs12_ArrayBufferg19firstElementAddressGSpx_ : $@convention(method) <Element> (@guaranteed _ArrayBuffer<Element>) -> UnsafeMutablePointer<Element>
+
+
+// _ArrayBuffer.count.setter
+sil hidden_external [fragile] @_TFVs12_ArrayBuffers5countSi : $@convention(method) <Element> (Int, @inout _ArrayBuffer<Element>) -> ()
+
+
+// Array.init(_uninitializedCount : Int) -> [A]
+sil hidden_external [fragile] @_TFSaCfT19_uninitializedCountSi_GSax_ : $@convention(method) <Element> (Int, @thin Array<Element>.Type) -> @owned Array<Element>
+
+
+// _ContiguousArrayBuffer.init(count : Int, storage : _ContiguousArrayStorage<A>) -> _ContiguousArrayBuffer<A>
+sil hidden_external [fragile] @_TFVs22_ContiguousArrayBufferCfT5countSi7storageGCs23_ContiguousArrayStoragex__GS_x_ : $@convention(method) <Element> (Int, @owned _ContiguousArrayStorage<Element>, @thin _ContiguousArrayBuffer<Element>.Type) -> @owned _ContiguousArrayBuffer<Element>
+
+
+// Array.init(_buffer : _ArrayBuffer<A>) -> [A]
+sil hidden_external [fragile] @_TFSaCfT7_bufferGVs12_ArrayBufferx__GSax_ : $@convention(method) <Element> (@owned _ArrayBuffer<Element>, @thin Array<Element>.Type) -> @owned Array<Element>
+
+
+// _ArrayBuffer.init(_buffer : _ContiguousArrayBuffer<A>, shiftedToStartIndex : Int) -> _ArrayBuffer<A>
+sil hidden_external [fragile] @_TFVs12_ArrayBufferCfT7_bufferGVs22_ContiguousArrayBufferx_19shiftedToStartIndexSi_GS_x_ : $@convention(method) <Element> (@owned _ContiguousArrayBuffer<Element>, Int, @thin _ArrayBuffer<Element>.Type) -> @owned _ArrayBuffer<Element>
+
+
+// _ContiguousArrayBuffer.firstElementAddress.getter
+sil [fragile] @_TFVs22_ContiguousArrayBufferg19firstElementAddressGSpx_ : $@convention(method) <Element> (@guaranteed _ContiguousArrayBuffer<Element>) -> UnsafeMutablePointer<Element>
+
+
+// swift_objc_class_usesNativeSwiftReferenceCounting
+sil @swift_objc_class_usesNativeSwiftReferenceCounting : $@convention(thin) (@thick AnyObject.Type) -> Bool
+
+
+// static Array._allocateBufferUninitialized(minimumCapacity : Int) -> _ArrayBuffer<A>
+sil hidden_external [fragile] [noinline] @_TZFSa28_allocateBufferUninitializedfT15minimumCapacitySi_GVs12_ArrayBufferx_ : $@convention(method) <Element> (Int, @thin Array<Element>.Type) -> @owned _ArrayBuffer<Element>
+
+
+// _ArrayBuffer._isNative.getter
+sil [fragile] @_TFVs12_ArrayBufferg9_isNativeSb : $@convention(method) <Element> (@guaranteed _ArrayBuffer<Element>) -> Bool
+
+
+// _ArrayBuffer._native.getter
+sil [fragile] @_TFVs12_ArrayBufferg7_nativeGVs22_ContiguousArrayBufferx_ : $@convention(method) <Element> (@guaranteed _ArrayBuffer<Element>) -> @owned _ContiguousArrayBuffer<Element>
+
+
+// _ContiguousArrayBuffer._initStorageHeader(count : Int, capacity : Int) -> ()
+sil hidden_external [fragile] @_TFVs22_ContiguousArrayBuffer18_initStorageHeaderfT5countSi8capacitySi_T_ : $@convention(method) <Element> (Int, Int, @guaranteed _ContiguousArrayBuffer<Element>) -> ()
+
+sil_scope 18 {  parent @_TTSfq0n_k_k___TFFVs12StaticString14withUTF8BufferurFFGSRVs5UInt8_xxU_FS0_T_ : $@convention(thin) (UInt8, @inout_aliasable UInt64, @inout_aliasable Int) -> () }
+
+// specialized StaticString.(withUTF8Buffer<A> ((UnsafeBufferPointer<UInt8>) -> A) -> A).(closure #1)
+sil shared_external [fragile] @_TTSfq0n_k_k___TFFVs12StaticString14withUTF8BufferurFFGSRVs5UInt8_xxU_FS0_T_ : $@convention(thin) (UInt8, @inout_aliasable UInt64, @inout_aliasable Int) -> () {
+// %0                                             // user: %4
+// %1                                             // users: %70, %3
+// %2                                             // users: %81, %72, %7
+bb0(%0 : $UInt8, %1 : $*UInt64, %2 : $*Int):
+  %3 = load %1 : $*UInt64, scope 18               // user: %66
+  %4 = struct_extract %0 : $UInt8, #UInt8._value, scope 18 // user: %5
+  %5 = builtin "zext_Int8_Int64"(%4 : $Builtin.Int8) : $Builtin.Int64, scope 18 // user: %6
+  %6 = struct $UInt64 (%5 : $Builtin.Int64), scope 18 // user: %61
+  %7 = load %2 : $*Int, scope 18                  // user: %8
+  %8 = struct_extract %7 : $Int, #Int._value, scope 18 // user: %9
+  %9 = builtin "s_to_u_checked_conversion_Int64"(%8 : $Builtin.Int64) : $(Builtin.Int64, Builtin.Int1), scope 18 // users: %11, %10
+  %10 = tuple_extract %9 : $(Builtin.Int64, Builtin.Int1), 0, scope 18 // user: %14
+  %11 = tuple_extract %9 : $(Builtin.Int64, Builtin.Int1), 1, scope 18 // user: %12
+  cond_fail %11 : $Builtin.Int1, scope 18         // id: %12
+  %13 = tuple (), scope 18
+  %14 = struct $UInt64 (%10 : $Builtin.Int64), scope 18 // user: %16
+  %15 = integer_literal $Builtin.Int64, 8, scope 18 // user: %18
+  %16 = struct_extract %14 : $UInt64, #UInt64._value, scope 18 // user: %18
+  %17 = integer_literal $Builtin.Int1, -1, scope 18 // user: %18
+  %18 = builtin "umul_with_overflow_Int64"(%16 : $Builtin.Int64, %15 : $Builtin.Int64, %17 : $Builtin.Int1) : $(Builtin.Int64, Builtin.Int1), scope 18 // users: %20, %19
+  %19 = tuple_extract %18 : $(Builtin.Int64, Builtin.Int1), 0, scope 18 // user: %23
+  %20 = tuple_extract %18 : $(Builtin.Int64, Builtin.Int1), 1, scope 18 // user: %21
+  cond_fail %20 : $Builtin.Int1, scope 18         // id: %21
+  %22 = tuple (), scope 18
+  %23 = struct $UInt64 (%19 : $Builtin.Int64), scope 18 // users: %62, %46
+  %24 = string_literal utf8 "shift amount is larger than type size in bits", scope 18 // user: %26
+  %25 = integer_literal $Builtin.Word, 45, scope 18 // user: %30
+  %26 = builtin "ptrtoint_Word"(%24 : $Builtin.RawPointer) : $Builtin.Word, scope 18 // user: %30
+  br bb1, scope 18                                // id: %27
+
+bb1:                                              // Preds: bb0
+  %28 = integer_literal $Builtin.Int8, 2, scope 18 // user: %30
+  br bb2, scope 18                                // id: %29
+
+bb2:                                              // Preds: bb1
+  %30 = struct $StaticString (%26 : $Builtin.Word, %25 : $Builtin.Word, %28 : $Builtin.Int8), scope 18 // user: %100
+  br bb3, scope 18                                // id: %31
+
+bb3:                                              // Preds: bb2
+  br bb4, scope 18                                // id: %32
+
+bb4:                                              // Preds: bb3
+  %33 = string_literal utf8 "/Users/ben/Documents/code/swift-sources/build/Ninja-DebugAssert/swift-macosx-x86_64/stdlib/public/core/8/FixedPoint.swift", scope 18 // user: %35
+  %34 = integer_literal $Builtin.Word, 121, scope 18 // user: %39
+  %35 = builtin "ptrtoint_Word"(%33 : $Builtin.RawPointer) : $Builtin.Word, scope 18 // user: %39
+  br bb5, scope 18                                // id: %36
+
+bb5:                                              // Preds: bb4
+  %37 = integer_literal $Builtin.Int8, 2, scope 18 // user: %39
+  br bb6, scope 18                                // id: %38
+
+bb6:                                              // Preds: bb5
+  %39 = struct $StaticString (%35 : $Builtin.Word, %34 : $Builtin.Word, %37 : $Builtin.Int8), scope 18 // user: %100
+  br bb7, scope 18                                // id: %40
+
+bb7:                                              // Preds: bb6
+  br bb8, scope 18                                // id: %41
+
+bb8:                                              // Preds: bb7
+  %42 = integer_literal $Builtin.Int64, 6983, scope 18 // user: %43
+  %43 = struct $UInt (%42 : $Builtin.Int64), scope 18 // user: %100
+  br bb9, scope 18                                // id: %44
+
+bb9:                                              // Preds: bb8
+  %45 = integer_literal $Builtin.Int64, 64, scope 18 // user: %47
+  %46 = struct_extract %23 : $UInt64, #UInt64._value, scope 18 // user: %47
+  %47 = builtin "cmp_ult_Int64"(%46 : $Builtin.Int64, %45 : $Builtin.Int64) : $Builtin.Int1, scope 18 // user: %48
+  %48 = struct $Bool (%47 : $Builtin.Int1), scope 18 // user: %50
+  %49 = integer_literal $Builtin.Int1, -1, scope 18 // user: %51
+  %50 = struct_extract %48 : $Bool, #Bool._value, scope 18 // user: %51
+  %51 = builtin "int_expect_Int1"(%50 : $Builtin.Int1, %49 : $Builtin.Int1) : $Builtin.Int1, scope 18 // user: %52
+  %52 = struct $Bool (%51 : $Builtin.Int1), scope 18 // user: %53
+  %53 = struct_extract %52 : $Bool, #Bool._value, scope 18 // user: %55
+  %54 = integer_literal $Builtin.Int1, -1, scope 18 // user: %55
+  %55 = builtin "xor_Int1"(%53 : $Builtin.Int1, %54 : $Builtin.Int1) : $Builtin.Int1, scope 18 // user: %56
+  %56 = struct $Bool (%55 : $Builtin.Int1), scope 18 // user: %57
+  %57 = struct_extract %56 : $Bool, #Bool._value, scope 18 // user: %58
+  cond_br %57, bb14, bb10, scope 18               // id: %58
+
+bb10:                                             // Preds: bb9
+  br bb11, scope 18                               // id: %59
+
+bb11:                                             // Preds: bb10
+  br bb12, scope 18                               // id: %60
+
+bb12:                                             // Preds: bb11
+  %61 = struct_extract %6 : $UInt64, #UInt64._value, scope 18 // user: %63
+  %62 = struct_extract %23 : $UInt64, #UInt64._value, scope 18 // user: %63
+  %63 = builtin "shl_Int64"(%61 : $Builtin.Int64, %62 : $Builtin.Int64) : $Builtin.Int64, scope 18 // user: %64
+  %64 = struct $UInt64 (%63 : $Builtin.Int64), scope 18 // user: %67
+  br bb13, scope 18                               // id: %65
+
+bb13:                                             // Preds: bb12
+  %66 = struct_extract %3 : $UInt64, #UInt64._value, scope 18 // user: %68
+  %67 = struct_extract %64 : $UInt64, #UInt64._value, scope 18 // user: %68
+  %68 = builtin "or_Int64"(%66 : $Builtin.Int64, %67 : $Builtin.Int64) : $Builtin.Int64, scope 18 // user: %69
+  %69 = struct $UInt64 (%68 : $Builtin.Int64), scope 18 // user: %70
+  store %69 to %1 : $*UInt64, scope 18            // id: %70
+  %71 = integer_literal $Builtin.Int64, 1, scope 18 // user: %75
+  %72 = load %2 : $*Int, scope 18                 // user: %73
+  %73 = struct_extract %72 : $Int, #Int._value, scope 18 // user: %75
+  %74 = integer_literal $Builtin.Int1, -1, scope 18 // user: %75
+  %75 = builtin "sadd_with_overflow_Int64"(%73 : $Builtin.Int64, %71 : $Builtin.Int64, %74 : $Builtin.Int1) : $(Builtin.Int64, Builtin.Int1), scope 18 // users: %77, %76
+  %76 = tuple_extract %75 : $(Builtin.Int64, Builtin.Int1), 0, scope 18 // user: %80
+  %77 = tuple_extract %75 : $(Builtin.Int64, Builtin.Int1), 1, scope 18 // user: %78
+  cond_fail %77 : $Builtin.Int1, scope 18         // id: %78
+  %79 = tuple (), scope 18
+  %80 = struct $Int (%76 : $Builtin.Int64), scope 18 // user: %81
+  store %80 to %2 : $*Int, scope 18               // id: %81
+  %82 = tuple (), scope 18
+  %83 = tuple (), scope 18                        // user: %84
+  return %83 : $(), scope 18                      // id: %84
+
+bb14:                                             // Preds: bb9
+  // function_ref _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %85 = function_ref @_TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 18 // user: %100
+  %86 = string_literal utf8 "fatal error", scope 18 // user: %88
+  %87 = integer_literal $Builtin.Word, 11, scope 18 // user: %92
+  %88 = builtin "ptrtoint_Word"(%86 : $Builtin.RawPointer) : $Builtin.Word, scope 18 // user: %92
+  br bb15, scope 18                               // id: %89
+
+bb15:                                             // Preds: bb14
+  %90 = integer_literal $Builtin.Int8, 2, scope 18 // user: %92
+  br bb16, scope 18                               // id: %91
+
+bb16:                                             // Preds: bb15
+  %92 = struct $StaticString (%88 : $Builtin.Word, %87 : $Builtin.Word, %90 : $Builtin.Int8), scope 18 // user: %100
+  br bb17, scope 18                               // id: %93
+
+bb17:                                             // Preds: bb16
+  br bb18, scope 18                               // id: %94
+
+bb18:                                             // Preds: bb17
+  br bb19, scope 18                               // id: %95
+
+bb19:                                             // Preds: bb18
+  %96 = integer_literal $Builtin.Int32, 1, scope 18 // user: %97
+  %97 = struct $UInt32 (%96 : $Builtin.Int32), scope 18 // user: %100
+  br bb20, scope 18                               // id: %98
+
+bb20:                                             // Preds: bb19
+  br bb21, scope 18                               // id: %99
+
+bb21:                                             // Preds: bb20
+  %100 = apply %85(%92, %30, %39, %43, %97) : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 18
+  unreachable , scope 18                          // id: %101
+}
+
+
+// static UTF8.encode(UnicodeScalar, into : (UInt8) -> ()) -> ()
+sil [fragile] @_TZFVs4UTF86encodefTSc4intoFVs5UInt8T__T_ : $@convention(method) (UnicodeScalar, @owned @callee_owned (UInt8) -> (), @thin UTF8.Type) -> ()
+
+
+// UnicodeScalar.init(UInt32) -> UnicodeScalar?
+sil [fragile] @_TFScCfVs6UInt32GSqSc_ : $@convention(method) (UInt32, @thin UnicodeScalar.Type) -> Optional<UnicodeScalar>
+
+
+// UnsafeBufferPointer.init(start : UnsafePointer<A>?, count : Int) -> UnsafeBufferPointer<A>
+sil [fragile] @_TFSRCfT5startGSqGSPx__5countSi_GSRx_ : $@convention(method) <Element> (Optional<UnsafePointer<Element>>, Int, @thin UnsafeBufferPointer<Element>.Type) -> UnsafeBufferPointer<Element>
+
+sil_scope 19 {  parent @_TFFCs23_ContiguousArrayStorage36_withVerbatimBridgedUnsafeBufferImplFzFzGSRPs9AnyObject__T_T_L_6$deferurfT_T_ : $@convention(thin) <τ_0_0> (@owned _ContiguousArrayStorage<τ_0_0>) -> () }
+
+// _ContiguousArrayStorage.(_withVerbatimBridgedUnsafeBufferImpl((UnsafeBufferPointer<AnyObject>) throws -> ()) throws -> ()).($defer #1)<A> () -> ()
+sil shared_external [fragile] @_TFFCs23_ContiguousArrayStorage36_withVerbatimBridgedUnsafeBufferImplFzFzGSRPs9AnyObject__T_T_L_6$deferurfT_T_ : $@convention(thin) <Element> (@owned _ContiguousArrayStorage<Element>) -> () {
+// %0                                             // users: %11, %9, %4, %3, %1
+bb0(%0 : $_ContiguousArrayStorage<Element>):
+  strong_retain %0 : $_ContiguousArrayStorage<Element>, scope 19 // id: %1
+  %2 = alloc_stack $_ContiguousArrayStorage<Element>, scope 19 // users: %8, %7, %5, %4
+  strong_retain %0 : $_ContiguousArrayStorage<Element>, scope 19 // id: %3
+  store %0 to %2 : $*_ContiguousArrayStorage<Element>, scope 19 // id: %4
+  fix_lifetime %2 : $*_ContiguousArrayStorage<Element>, scope 19 // id: %5
+  %6 = tuple (), scope 19
+  destroy_addr %2 : $*_ContiguousArrayStorage<Element>, scope 19 // id: %7
+  dealloc_stack %2 : $*_ContiguousArrayStorage<Element>, scope 19 // id: %8
+  strong_release %0 : $_ContiguousArrayStorage<Element>, scope 19 // id: %9
+  %10 = tuple (), scope 19
+  strong_release %0 : $_ContiguousArrayStorage<Element>, scope 19 // id: %11
+  %12 = tuple (), scope 19                        // user: %13
+  return %12 : $(), scope 19                      // id: %13
+}
+
+
+// _isClassOrObjCExistential<A> (A.Type) -> Bool
+sil [fragile] [always_inline] @_TFs25_isClassOrObjCExistentialurFMxSb : $@convention(thin) <T> (@thick T.Type) -> Bool
+
+
+// static _HeapBuffer._elementOffset() -> Int
+sil hidden_external [fragile] @_TZFVs11_HeapBuffer14_elementOffsetfT_Si : $@convention(method) <Value, Element> (@thin _HeapBuffer<Value, Element>.Type) -> Int
+
+
+// static _HeapBuffer._requiredAlignMask() -> Int
+sil hidden_external [fragile] @_TZFVs11_HeapBuffer18_requiredAlignMaskfT_Si : $@convention(method) <Value, Element> (@thin _HeapBuffer<Value, Element>.Type) -> Int
+
+
+// swift_bufferAllocate
+sil hidden_external [fragile] @swift_bufferAllocate : $@convention(thin) (@thick AnyObject.Type, Int, Int) -> @owned AnyObject
+
+
+// _HeapBuffer._value.getter
+sil hidden_external [fragile] @_TFVs11_HeapBufferg6_valueGSpx_ : $@convention(method) <Value, Element> (@guaranteed _HeapBuffer<Value, Element>) -> UnsafeMutablePointer<Value>
+
+
+// + infix<A where ...> (A.Stride, A) -> A
+sil [fragile] @_TFsoi1puRxs10StrideablerFTwx6Stridex_x : $@convention(thin) <T where T : Strideable> (@in T.Stride, @in T) -> @out T
+
+
+// _HeapBuffer._address.getter
+sil hidden_external [fragile] @_TFVs11_HeapBufferg8_addressSv : $@convention(method) <Value, Element> (@guaranteed _HeapBuffer<Value, Element>) -> UnsafeMutableRawPointer
+
+
+// _swift_bridgeAnythingNonVerbatimToObjectiveC
+sil @_swift_bridgeAnythingNonVerbatimToObjectiveC : $@convention(thin) <τ_0_0> (@in τ_0_0) -> @owned AnyObject
+
+
+// UnsafeMutablePointer.deinitialize(count : Int) -> UnsafeMutableRawPointer
+sil [fragile] @_TFSp12deinitializefT5countSi_Sv : $@convention(method) <Pointee> (Int, UnsafeMutablePointer<Pointee>) -> UnsafeMutableRawPointer
+
+
+// _ContiguousArrayStorageBase.deinit
+sil hidden_external [fragile] @_TFCs27_ContiguousArrayStorageBased : $@convention(method) (@guaranteed _ContiguousArrayStorageBase) -> @owned Builtin.NativeObject
+
+
+// UInt32.init(UnicodeScalar) -> UInt32
+sil [fragile] @_TFVs6UInt32CfScS_ : $@convention(method) (UnicodeScalar, @thin UInt32.Type) -> UInt32
+
+
+// != infix<A where ...> (A?, A?) -> Bool
+sil [fragile] @_TFsoi2neuRxs9EquatablerFTGSqx_GSqx__Sb : $@convention(thin) <T where T : Equatable> (@in Optional<T>, @in Optional<T>) -> Bool
+
+
+// Optional.map<A> ((A) throws -> A1) throws -> A1?
+sil [fragile] @_TFSq3mapurfzFzxqd__GSqqd___ : $@convention(method) <Wrapped><U> (@owned @callee_owned (@in Wrapped) -> (@out U, @error Error), @in_guaranteed Optional<Wrapped>) -> (@out Optional<U>, @error Error)
+
+sil_scope 20 {  parent @_TFFSRcFT5startGSqGSPx__5countSi_GSRx_U_FGSPQ__GSPQ__ : $@convention(thin) <τ_0_0> (UnsafePointer<τ_0_0>, Int) -> UnsafePointer<τ_0_0> }
+
+// UnsafeBufferPointer.(init(start : UnsafePointer<A>?, count : Int) -> UnsafeBufferPointer<A>).(closure #1)
+sil shared_external [fragile] @_TFFSRcFT5startGSqGSPx__5countSi_GSRx_U_FGSPQ__GSPQ__ : $@convention(thin) <Element> (UnsafePointer<Element>, Int) -> UnsafePointer<Element> {
+// %0                                             // user: %2
+// %1                                             // user: %3
+bb0(%0 : $UnsafePointer<Element>, %1 : $Int):
+  %2 = struct_extract %0 : $UnsafePointer<Element>, #UnsafePointer._rawValue, scope 20 // user: %6
+  %3 = struct_extract %1 : $Int, #Int._value, scope 20 // user: %4
+  %4 = builtin "truncOrBitCast_Int64_Word"(%3 : $Builtin.Int64) : $Builtin.Word, scope 20 // user: %7
+  %5 = metatype $@thick Element.Type, scope 20
+  %6 = pointer_to_address %2 : $Builtin.RawPointer to [strict] $*Element, scope 20 // user: %7
+  %7 = index_addr %6 : $*Element, %4 : $Builtin.Word, scope 20 // user: %8
+  %8 = address_to_pointer %7 : $*Element to $Builtin.RawPointer, scope 20 // user: %9
+  %9 = struct $UnsafePointer<Element> (%8 : $Builtin.RawPointer), scope 20 // user: %10
+  return %9 : $UnsafePointer<Element>, scope 20   // id: %10
+}
+
+sil_scope 21 {  parent @_TTRGrXFo_dGSPx__dGSPx_zoPs5Error__XFo_iGSPx__iGSPx_zoPS___ : $@convention(thin) <τ_0_0> (@in UnsafePointer<τ_0_0>, @owned @callee_owned (UnsafePointer<τ_0_0>) -> (UnsafePointer<τ_0_0>, @error Error)) -> (@out UnsafePointer<τ_0_0>, @error Error) }
+
+// thunk
+sil shared_external [transparent] [fragile] [reabstraction_thunk] @_TTRGrXFo_dGSPx__dGSPx_zoPs5Error__XFo_iGSPx__iGSPx_zoPS___ : $@convention(thin) <Element> (@in UnsafePointer<Element>, @owned @callee_owned (UnsafePointer<Element>) -> (UnsafePointer<Element>, @error Error)) -> (@out UnsafePointer<Element>, @error Error) {
+// %0                                             // user: %9
+// %1                                             // user: %3
+// %2                                             // user: %4
+bb0(%0 : $*UnsafePointer<Element>, %1 : $*UnsafePointer<Element>, %2 : $@callee_owned (UnsafePointer<Element>) -> (UnsafePointer<Element>, @error Error)):
+  %3 = load %1 : $*UnsafePointer<Element>, scope 21 // user: %4
+  try_apply %2(%3) : $@callee_owned (UnsafePointer<Element>) -> (UnsafePointer<Element>, @error Error), normal bb2, error bb1, scope 21 // id: %4
+
+// %5                                             // users: %7, %6
+bb1(%5 : $Error):                                 // Preds: bb0
+  %6 = builtin "willThrow"(%5 : $Error) : $(), scope 21
+  throw %5 : $Error, scope 21                     // id: %7
+
+// %8                                             // user: %9
+bb2(%8 : $UnsafePointer<Element>):                // Preds: bb0
+  store %8 to %0 : $*UnsafePointer<Element>, scope 21 // id: %9
+  %10 = tuple (), scope 21                        // user: %11
+  return %10 : $(), scope 21                      // id: %11
+}
+
+
+// _swift_isClassOrObjCExistentialType
+sil @_swift_isClassOrObjCExistentialType : $@convention(thin) <τ_0_0> (@thick τ_0_0.Type) -> Bool
+
+
+// _roundUp(Int, toAlignment : Int) -> Int
+sil [fragile] @_TFs8_roundUpFTSi11toAlignmentSi_Si : $@convention(thin) (Int, Int) -> Int
+
+
+// static _HeapBuffer._valueOffset() -> Int
+sil hidden_external [fragile] @_TZFVs11_HeapBuffer12_valueOffsetfT_Si : $@convention(method) <Value, Element> (@thin _HeapBuffer<Value, Element>.Type) -> Int
+
+
+// _HeapBuffer._nativeObject.getter
+sil hidden_external [fragile] @_TFVs11_HeapBufferg13_nativeObjectBo : $@convention(method) <Value, Element> (@guaranteed _HeapBuffer<Value, Element>) -> @owned Builtin.NativeObject
+
+
+// !== infix(AnyObject?, AnyObject?) -> Bool
+sil [fragile] @_TFsoi3neeFTGSqPs9AnyObject__GSqPS____Sb : $@convention(thin) (@owned Optional<AnyObject>, @owned Optional<AnyObject>) -> Bool
+
+
+// _SwiftNativeNSArrayWithContiguousStorage.deinit
+sil hidden_external [fragile] @_TFCs40_SwiftNativeNSArrayWithContiguousStoraged : $@convention(method) (@guaranteed _SwiftNativeNSArrayWithContiguousStorage) -> @owned Builtin.NativeObject
+
+
+// _HeapBuffer.init(_HeapBufferStorage<A, B>) -> _HeapBuffer<A, B>
+sil [fragile] @_TFVs11_HeapBufferCfGCs18_HeapBufferStoragexq__GS_xq__ : $@convention(method) <Value, Element> (@owned _HeapBufferStorage<Value, Element>, @thin _HeapBuffer<Value, Element>.Type) -> @owned _HeapBuffer<Value, Element>
+
+
+// UnsafeMutablePointer.(deinitialize(count : Int) -> UnsafeMutableRawPointer).(default argument 0)
+sil [fragile] @_TIFSp12deinitializeFT5countSi_SvA_ : $@convention(thin) <Pointee> () -> Int
+
+
+// Array._getCount() -> Int
+sil hidden_external [fragile] [_semantics "array.get_count"] @_TFSa9_getCountfT_Si : $@convention(method) <Element> (@guaranteed Array<Element>) -> Int
+
+
+// Array._getCapacity() -> Int
+sil hidden_external [fragile] [_semantics "array.get_capacity"] @_TFSa12_getCapacityfT_Si : $@convention(method) <Element> (@guaranteed Array<Element>) -> Int
+
+
+// _ArrayBuffer.requestUniqueMutableBackingBuffer(minimumCapacity : Int) -> _ContiguousArrayBuffer<A>?
+sil hidden_external [fragile] @_TFVs12_ArrayBuffer33requestUniqueMutableBackingBufferfT15minimumCapacitySi_GSqGVs22_ContiguousArrayBufferx__ : $@convention(method) <Element> (Int, @inout _ArrayBuffer<Element>) -> @owned Optional<_ContiguousArrayBuffer<Element>>
+
+
+// _ContiguousArrayBuffer.init(_uninitializedCount : Int, minimumCapacity : Int) -> _ContiguousArrayBuffer<A>
+sil hidden_external [fragile] @_TFVs22_ContiguousArrayBufferCfT19_uninitializedCountSi15minimumCapacitySi_GS_x_ : $@convention(method) <Element> (Int, Int, @thin _ContiguousArrayBuffer<Element>.Type) -> @owned _ContiguousArrayBuffer<Element>
+
+
+// _ArrayBuffer._copyContents(subRange : Range<Int>, initializing : UnsafeMutablePointer<A>) -> UnsafeMutablePointer<A>
+sil hidden_external [fragile] @_TFVs12_ArrayBuffer13_copyContentsfT8subRangeGVs5RangeSi_12initializingGSpx__GSpx_ : $@convention(method) <Element> (Range<Int>, UnsafeMutablePointer<Element>, @guaranteed _ArrayBuffer<Element>) -> UnsafeMutablePointer<Element>
+
+
+// Range<A where ...>.init(CountableRange<A>) -> Range<A>
+sil [fragile] [always_inline] @_TFesRxs10Comparablexs11_StrideablewxPS0_6Strides13SignedIntegerrVs5RangeCfGVs14CountableRangex_GS3_x_ : $@convention(method) <Bound where Bound : Comparable, Bound : _Strideable, Bound.Stride : SignedInteger> (@in CountableRange<Bound>, @thin Range<Bound>.Type) -> @out Range<Bound>
+
+
+// RandomAccessCollection<A where ...>.indices.getter
+sil [fragile] @_TFesRxs22RandomAccessCollectionwx5Indexs10Strideablewx7IndiceszGVs14CountableRangewxS0__wx13IndexDistancezWxS0_6Stride_wxS0_zWxS2_S0__wxS4_zWxS2_S4__WxS2_7Indices_zGS3_wxS0__WxS2_8Iterator_zGVs16IndexingIteratorGS3_wxS0___WxS2_11SubSequence_zGS3_wxS0__wxS0_zWxS2_8_Element_wxS0_zWxS2_S6_S0__wxS4_zWxS2_S6_S4__WxS2_S6_S6__zGS3_wxS0__WxS2_S6_S7__zGS8_GS3_wxS0___WxS2_S6_S9__zGS3_wxS0__wxS0_zWxS2_S6_S10__wxS0_zWxS2_S7_7Element_wxS0_zWxS2_S9_S0__wxS4_zWxS2_S9_13IndexDistance_WxS2_S9_S6__zGS3_wxS0__WxS2_S9_S7__zGS8_GS3_wxS0___WxS2_S9_S9__zGS3_wxS0__wxS0_zWxS2_S9_S10__wxS0_zWxS2_S6_S6_S0__wxS4_zWxS2_S6_S6_S4__WxS2_S6_S6_S7__zGS8_GS3_wxS0___WxS2_S6_S6_S9__zGS3_wxS0__wxS0_zWxS2_S6_S6_S10__wxS0_zWxS2_S6_S7_S11__wxS0_zWxS2_S6_S9_S0__WxS2_S6_S9_S7__zGS8_GS3_wxS0___WxS2_S6_S9_S9__zGS3_wxS0__wxS0_zWxS2_S6_S9_S10__wxS0_zWxS2_S9_S6_S0__wxS4_zWxS2_S9_S6_S4__WxS2_S9_S6_S7__zGS8_GS3_wxS0___WxS2_S9_S6_S9__zGS3_wxS0__wxS0_zWxS2_S9_S6_S10__wxS0_zWxS2_S9_S7_S11__wxS0_zWxS2_S9_S9_S0__WxS2_S9_S9_S7__zGS8_GS3_wxS0___WxS2_S9_S9_S9__zGS3_wxS0__wxS0_zWxS2_S9_S9_S10__wxS0_zWxS2_S6_S6_S7_S11__wxS0_zWxS2_S6_S9_S7_S11__wxS0_zWxS2_S9_S6_S7_S11__wxS0_zWxS2_S9_S9_S7_S11__rS_g7indicesGS3_wxS0__ : $@convention(method) <Self where Self : RandomAccessCollection, Self.Index : Strideable, Self.Indices == CountableRange<Self.Index>, Self.IndexDistance == Self.Index.Stride, Self.Index == Self.Indices.Index, Self.IndexDistance == Self.Indices.IndexDistance, Self.Indices.Indices == CountableRange<Self.Index>, Self.Indices.Iterator == IndexingIterator<CountableRange<Self.Index>>, Self.Indices.SubSequence == CountableRange<Self.Index>, Self.Index == Self.Indices._Element, Self.Index == Self.Indices.Indices.Index, Self.IndexDistance == Self.Indices.Indices.IndexDistance, Self.Indices.Indices.Indices == CountableRange<Self.Index>, Self.Indices.Indices.Iterator == IndexingIterator<CountableRange<Self.Index>>, Self.Indices.Indices.SubSequence == CountableRange<Self.Index>, Self.Index == Self.Indices.Indices._Element, Self.Index == Self.Indices.Iterator.Element, Self.Index == Self.Indices.SubSequence.Index, Self.IndexDistance == Self.Indices.SubSequence.IndexDistance, Self.Indices.SubSequence.Indices == CountableRange<Self.Index>, Self.Indices.SubSequence.Iterator == IndexingIterator<CountableRange<Self.Index>>, Self.Indices.SubSequence.SubSequence == CountableRange<Self.Index>, Self.Index == Self.Indices.SubSequence._Element, Self.Index == Self.Indices.Indices.Indices.Index, Self.IndexDistance == Self.Indices.Indices.Indices.IndexDistance, Self.Indices.Indices.Indices.Iterator == IndexingIterator<CountableRange<Self.Index>>, Self.Indices.Indices.Indices.SubSequence == CountableRange<Self.Index>, Self.Index == Self.Indices.Indices.Indices._Element, Self.Index == Self.Indices.Indices.Iterator.Element, Self.Index == Self.Indices.Indices.SubSequence.Index, Self.Indices.Indices.SubSequence.Iterator == IndexingIterator<CountableRange<Self.Index>>, Self.Indices.Indices.SubSequence.SubSequence == CountableRange<Self.Index>, Self.Index == Self.Indices.Indices.SubSequence._Element, Self.Index == Self.Indices.SubSequence.Indices.Index, Self.IndexDistance == Self.Indices.SubSequence.Indices.IndexDistance, Self.Indices.SubSequence.Indices.Iterator == IndexingIterator<CountableRange<Self.Index>>, Self.Indices.SubSequence.Indices.SubSequence == CountableRange<Self.Index>, Self.Index == Self.Indices.SubSequence.Indices._Element, Self.Index == Self.Indices.SubSequence.Iterator.Element, Self.Index == Self.Indices.SubSequence.SubSequence.Index, Self.Indices.SubSequence.SubSequence.Iterator == IndexingIterator<CountableRange<Self.Index>>, Self.Indices.SubSequence.SubSequence.SubSequence == CountableRange<Self.Index>, Self.Index == Self.Indices.SubSequence.SubSequence._Element, Self.Index == Self.Indices.Indices.Indices.Iterator.Element, Self.Index == Self.Indices.Indices.SubSequence.Iterator.Element, Self.Index == Self.Indices.SubSequence.Indices.Iterator.Element, Self.Index == Self.Indices.SubSequence.SubSequence.Iterator.Element> (@in_guaranteed Self) -> @out CountableRange<Self.Index>
+
+
+// _ArrayBuffer.startIndex.getter
+sil hidden_external [fragile] @_TFVs12_ArrayBufferg10startIndexSi : $@convention(method) <Element> (@guaranteed _ArrayBuffer<Element>) -> Int
+
+
+// _ContiguousArrayBuffer.count.setter
+sil [fragile] @_TFVs22_ContiguousArrayBuffers5countSi : $@convention(method) <Element> (Int, @guaranteed _ContiguousArrayBuffer<Element>) -> ()
+
+
+// _ArrayBuffer.count.getter
+sil hidden_external [fragile] [always_inline] @_TFVs12_ArrayBufferg5countSi : $@convention(method) <Element> (@guaranteed _ArrayBuffer<Element>) -> Int
+
+
+// _ArrayBuffer.capacity.getter
+sil hidden_external [fragile] @_TFVs12_ArrayBufferg8capacitySi : $@convention(method) <Element> (@guaranteed _ArrayBuffer<Element>) -> Int
+
+
+// _ArrayBuffer.isUniquelyReferenced() -> Bool
+sil hidden_external [fragile] @_TFVs12_ArrayBuffer20isUniquelyReferencedfT_Sb : $@convention(method) <Element> (@inout _ArrayBuffer<Element>) -> Bool
+
+
+// _ContiguousArrayBuffer.capacity.getter
+sil hidden_external [fragile] @_TFVs22_ContiguousArrayBufferg8capacitySi : $@convention(method) <Element> (@guaranteed _ContiguousArrayBuffer<Element>) -> Int
+
+
+// + infix<A where ...> (A, A.Stride) -> A
+sil [fragile] @_TFsoi1puRxs10StrideablerFTxwx6Stride_x : $@convention(thin) <T where T : Strideable> (@in T, @in T.Stride) -> @out T
+
+
+// _swift_stdlib_malloc_size
+sil [readnone] [clang _swift_stdlib_malloc_size] @_swift_stdlib_malloc_size : $@convention(c) (UnsafeRawPointer) -> Int
+
+
+// _ContiguousArrayBuffer.init() -> _ContiguousArrayBuffer<A>
+sil hidden_external [fragile] @_TFVs22_ContiguousArrayBufferCfT_GS_x_ : $@convention(method) <Element> (@thin _ContiguousArrayBuffer<Element>.Type) -> @owned _ContiguousArrayBuffer<Element>
+
+
+// Range.init(uncheckedBounds : (lower : A, upper : A)) -> Range<A>
+sil [fragile] [always_inline] @_TFVs5RangeCfT15uncheckedBoundsT5lowerx5upperx__GS_x_ : $@convention(method) <Bound where Bound : Comparable> (@in Bound, @in Bound, @thin Range<Bound>.Type) -> @out Range<Bound>
+
+
+// _ArrayBuffer._typeCheck(Range<Int>) -> ()
+sil hidden_external [fragile] @_TFVs12_ArrayBuffer10_typeCheckfGVs5RangeSi_T_ : $@convention(method) <Element> (Range<Int>, @guaranteed _ArrayBuffer<Element>) -> ()
+
+
+// _ArrayBuffer._nonNative.getter
+sil [fragile] [always_inline] @_TFVs12_ArrayBufferg10_nonNativePs12_NSArrayCore_ : $@convention(method) <Element> (@guaranteed _ArrayBuffer<Element>) -> @owned _NSArrayCore
+
+
+// CountableRange.init(Range<A>) -> CountableRange<A>
+sil [fragile] [always_inline] @_TFVs14CountableRangeCfGVs5Rangex_GS_x_ : $@convention(method) <Bound where Bound : Comparable, Bound : _Strideable, Bound.Stride : SignedInteger> (@in Range<Bound>, @thin CountableRange<Bound>.Type) -> @out CountableRange<Bound>
+
+
+// _ContiguousArrayBuffer._copyContents(subRange : Range<Int>, initializing : UnsafeMutablePointer<A>) -> UnsafeMutablePointer<A>
+sil hidden_external [fragile] @_TFVs22_ContiguousArrayBuffer13_copyContentsfT8subRangeGVs5RangeSi_12initializingGSpx__GSpx_ : $@convention(method) <Element> (Range<Int>, UnsafeMutablePointer<Element>, @guaranteed _ContiguousArrayBuffer<Element>) -> UnsafeMutablePointer<Element>
+
+
+// _BridgeStorage.isNative.getter
+sil [fragile] [always_inline] @_TFVs14_BridgeStorageg8isNativeSb : $@convention(method) <NativeClass, ObjCClass where NativeClass : AnyObject, ObjCClass : AnyObject> (@guaranteed _BridgeStorage<NativeClass, ObjCClass>) -> Bool
+
+
+// _ContiguousArrayBuffer.init(_ContiguousArrayStorageBase) -> _ContiguousArrayBuffer<A>
+sil hidden_external [fragile] @_TFVs22_ContiguousArrayBufferCfCs27_ContiguousArrayStorageBaseGS_x_ : $@convention(method) <Element> (@owned _ContiguousArrayStorageBase, @thin _ContiguousArrayBuffer<Element>.Type) -> @owned _ContiguousArrayBuffer<Element>
+
+
+// _BridgeStorage.nativeInstance_noSpareBits.getter
+sil [fragile] [always_inline] @_TFVs14_BridgeStorageg26nativeInstance_noSpareBitsx : $@convention(method) <NativeClass, ObjCClass where NativeClass : AnyObject, ObjCClass : AnyObject> (@guaranteed _BridgeStorage<NativeClass, ObjCClass>) -> @owned NativeClass
+
+
+// _BridgeStorage.nativeInstance.getter
+sil [fragile] [always_inline] @_TFVs14_BridgeStorageg14nativeInstancex : $@convention(method) <NativeClass, ObjCClass where NativeClass : AnyObject, ObjCClass : AnyObject> (@guaranteed _BridgeStorage<NativeClass, ObjCClass>) -> @owned NativeClass
+
+
+// _ArrayBody.count.setter
+sil hidden_external [fragile] @_TFVs10_ArrayBodys5countSi : $@convention(method) (Int, @inout _ArrayBody) -> ()
+
+
+// _ArrayBody.init(count : Int, capacity : Int, elementTypeIsBridgedVerbatim : Bool) -> _ArrayBody
+sil [fragile] @_TFVs10_ArrayBodyCfT5countSi8capacitySi28elementTypeIsBridgedVerbatimSb_S_ : $@convention(method) (Int, Int, Bool, @thin _ArrayBody.Type) -> _ArrayBody
+
+
+// _bitPattern(Builtin.BridgeObject) -> UInt
+sil [fragile] [always_inline] @_TFs11_bitPatternFBbSu : $@convention(thin) (@owned Builtin.BridgeObject) -> UInt
+
+
+// _objCTaggedPointerBits.getter
+sil [fragile] [always_inline] @_TFsg22_objCTaggedPointerBitsSu : $@convention(thin) () -> UInt
+
+
+// _objectPointerIsObjCBit.getter
+sil [fragile] [always_inline] @_TFsg23_objectPointerIsObjCBitSu : $@convention(thin) () -> UInt
+
+
+// _nonPointerBits(Builtin.BridgeObject) -> UInt
+sil [fragile] [always_inline] @_TFs15_nonPointerBitsFBbSu : $@convention(thin) (@owned Builtin.BridgeObject) -> UInt
+
+
+// UnicodeScalar.value.getter
+sil [fragile] @_TFScg5valueVs6UInt32 : $@convention(method) (UnicodeScalar) -> UInt32
+
+
+// == infix<A where ...> (A?, A?) -> Bool
+sil [fragile] @_TFsoi2eeuRxs9EquatablerFTGSqx_GSqx__Sb : $@convention(thin) <T where T : Equatable> (@in Optional<T>, @in Optional<T>) -> Bool
+
+
+// _roundUpImpl(UInt, toAlignment : Int) -> UInt
+sil [fragile] [always_inline] @_TFs12_roundUpImplFTSu11toAlignmentSi_Su : $@convention(thin) (UInt, Int) -> UInt
+
+
+// === infix(AnyObject?, AnyObject?) -> Bool
+sil [fragile] @_TFsoi3eeeFTGSqPs9AnyObject__GSqPS____Sb : $@convention(thin) (@owned Optional<AnyObject>, @owned Optional<AnyObject>) -> Bool
+
+
+// _SwiftNativeNSArray.deinit
+sil hidden_external [fragile] @_TFCs19_SwiftNativeNSArrayd : $@convention(method) (@guaranteed _SwiftNativeNSArray) -> @owned Builtin.NativeObject
+
+
+// _ContiguousArrayBuffer.count.getter
+sil [fragile] @_TFVs22_ContiguousArrayBufferg5countSi : $@convention(method) <Element> (@guaranteed _ContiguousArrayBuffer<Element>) -> Int
+
+
+// _BridgeStorage.isUniquelyReferencedNative() -> Bool
+sil [fragile] [always_inline] @_TFVs14_BridgeStorage26isUniquelyReferencedNativefT_Sb : $@convention(method) <NativeClass, ObjCClass where NativeClass : AnyObject, ObjCClass : AnyObject> (@inout _BridgeStorage<NativeClass, ObjCClass>) -> Bool
+
+
+// _BridgeStorage.isUniquelyReferenced_native_noSpareBits() -> Bool
+sil [fragile] [always_inline] @_TFVs14_BridgeStorage39isUniquelyReferenced_native_noSpareBitsfT_Sb : $@convention(method) <NativeClass, ObjCClass where NativeClass : AnyObject, ObjCClass : AnyObject> (@inout _BridgeStorage<NativeClass, ObjCClass>) -> Bool
+
+
+// _ArrayBody.capacity.getter
+sil hidden_external [fragile] @_TFVs10_ArrayBodyg8capacitySi : $@convention(method) (_ArrayBody) -> Int
+
+
+// _ArrayBuffer.needsElementTypeCheck.getter
+sil hidden_external [fragile] @_TFVs12_ArrayBufferg21needsElementTypeCheckSb : $@convention(method) <Element> (@guaranteed _ArrayBuffer<Element>) -> Bool
+
+
+// _ArrayBuffer._typeCheckSlowPath(Int) -> ()
+sil hidden_external [fragile] [noinline] @_TFVs12_ArrayBuffer18_typeCheckSlowPathfSiT_ : $@convention(method) <Element> (Int, @guaranteed _ArrayBuffer<Element>) -> ()
+
+
+// _BridgeStorage.objCInstance.getter
+sil [fragile] [always_inline] @_TFVs14_BridgeStorageg12objCInstanceq_ : $@convention(method) <NativeClass, ObjCClass where NativeClass : AnyObject, ObjCClass : AnyObject> (@guaranteed _BridgeStorage<NativeClass, ObjCClass>) -> @owned ObjCClass
+
+
+// UnsafeMutablePointer.initialize(from : UnsafePointer<A>, count : Int) -> ()
+sil [fragile] @_TFSp10initializefT4fromGSPx_5countSi_T_ : $@convention(method) <Pointee> (UnsafePointer<Pointee>, Int, UnsafeMutablePointer<Pointee>) -> ()
+
+
+// _ContiguousArrayBuffer.owner.getter
+sil [fragile] @_TFVs22_ContiguousArrayBufferg5ownerPs9AnyObject_ : $@convention(method) <Element> (@guaranteed _ContiguousArrayBuffer<Element>) -> @owned AnyObject
+
+
+// _objectPointerSpareBits.getter
+sil [fragile] [always_inline] @_TFsg23_objectPointerSpareBitsSu : $@convention(thin) () -> UInt
+
+
+// _ArrayBody._capacityAndFlags.getter
+sil hidden_external [fragile] @_TFVs10_ArrayBodyg17_capacityAndFlagsSu : $@convention(method) (_ArrayBody) -> UInt
+
+
+// _ArrayBuffer._isNativeTypeChecked.getter
+sil hidden_external [fragile] @_TFVs12_ArrayBufferg20_isNativeTypeCheckedSb : $@convention(method) <Element> (@guaranteed _ArrayBuffer<Element>) -> Bool
+
+
+// _ArrayBuffer.cast<A> (toBufferOf : A1.Type) -> _ArrayBuffer<A1>
+sil hidden_external [fragile] @_TFVs12_ArrayBuffer4casturfT10toBufferOfMqd___GS_qd___ : $@convention(method) <Element><U> (@thick U.Type, @guaranteed _ArrayBuffer<Element>) -> @owned _ArrayBuffer<U>
+
+
+// _ContiguousArrayBuffer.subscript.getter
+sil [fragile] [always_inline] @_TFVs22_ContiguousArrayBufferg9subscriptFSix : $@convention(method) <Element> (Int, @guaranteed _ContiguousArrayBuffer<Element>) -> @out Element
+
+
+// _BridgeStorage.isObjC.getter
+sil [fragile] [always_inline] @_TFVs14_BridgeStorageg6isObjCSb : $@convention(method) <NativeClass, ObjCClass where NativeClass : AnyObject, ObjCClass : AnyObject> (@guaranteed _BridgeStorage<NativeClass, ObjCClass>) -> Bool
+
+
+// <= infix<A where ...> (A, A) -> Bool
+sil [fragile] @_TFsoi2leuRxs10ComparablerFTxx_Sb : $@convention(thin) <T where T : Comparable> (@in T, @in T) -> Bool
+
+
+// _BridgeStorage.isNativeWithClearedSpareBits(Int) -> Bool
+sil [fragile] [always_inline] @_TFVs14_BridgeStorage28isNativeWithClearedSpareBitsfSiSb : $@convention(method) <NativeClass, ObjCClass where NativeClass : AnyObject, ObjCClass : AnyObject> (Int, @guaranteed _BridgeStorage<NativeClass, ObjCClass>) -> Bool
+
+
+// _ArrayBuffer.deferredTypeCheckMask.getter
+sil hidden_external [fragile] @_TFVs12_ArrayBufferg21deferredTypeCheckMaskSi : $@convention(method) <Element> (@guaranteed _ArrayBuffer<Element>) -> Int
+
+
+// _ArrayBuffer.init(storage : _BridgeStorage<_ContiguousArrayStorageBase, _NSArrayCore>) -> _ArrayBuffer<A>
+sil hidden_external [fragile] @_TFVs12_ArrayBufferCfT7storageGVs14_BridgeStorageCs27_ContiguousArrayStorageBasePs12_NSArrayCore___GS_x_ : $@convention(method) <Element> (@owned _BridgeStorage<_ContiguousArrayStorageBase, _NSArrayCore>, @thin _ArrayBuffer<Element>.Type) -> @owned _ArrayBuffer<Element>
+
+
+// _ContiguousArrayBuffer.getElement(Int) -> A
+sil [fragile] [always_inline] @_TFVs22_ContiguousArrayBuffer10getElementfSix : $@convention(method) <Element> (Int, @guaranteed _ContiguousArrayBuffer<Element>) -> @out Element
+
+
+// _objectPointerLowSpareBitShift.getter
+sil [fragile] [always_inline] @_TFsg30_objectPointerLowSpareBitShiftSu : $@convention(thin) () -> UInt
+
+sil_scope 22 {  parent @_TFsoi1lFTSiSi_Sb : $@convention(thin) (Int, Int) -> Bool }
+
+// < infix(Int, Int) -> Bool
+sil public_external [transparent] [fragile] @_TFsoi1lFTSiSi_Sb : $@convention(thin) (Int, Int) -> Bool {
+// %0                                             // user: %2
+// %1                                             // user: %3
+bb0(%0 : $Int, %1 : $Int):
+  %2 = struct_extract %0 : $Int, #Int._value, scope 22 // user: %4
+  %3 = struct_extract %1 : $Int, #Int._value, scope 22 // user: %4
+  %4 = builtin "cmp_slt_Int64"(%2 : $Builtin.Int64, %3 : $Builtin.Int64) : $Builtin.Int1, scope 22 // user: %5
+  %5 = struct $Bool (%4 : $Builtin.Int1), scope 22 // user: %6
+  return %5 : $Bool, scope 22                     // id: %6
+}
+
+sil_scope 23 {  parent @_TFsoi2geFTSiSi_Sb : $@convention(thin) (Int, Int) -> Bool }
+
+// >= infix(Int, Int) -> Bool
+sil public_external [transparent] [fragile] @_TFsoi2geFTSiSi_Sb : $@convention(thin) (Int, Int) -> Bool {
+// %0                                             // user: %2
+// %1                                             // user: %3
+bb0(%0 : $Int, %1 : $Int):
+  %2 = struct_extract %0 : $Int, #Int._value, scope 23 // user: %4
+  %3 = struct_extract %1 : $Int, #Int._value, scope 23 // user: %4
+  %4 = builtin "cmp_sge_Int64"(%2 : $Builtin.Int64, %3 : $Builtin.Int64) : $Builtin.Int1, scope 23 // user: %5
+  %5 = struct $Bool (%4 : $Builtin.Int1), scope 23 // user: %6
+  return %5 : $Bool, scope 23                     // id: %6
+}
+
+sil_scope 24 {  parent @_TFsoi1gFTSiSi_Sb : $@convention(thin) (Int, Int) -> Bool }
+
+// > infix(Int, Int) -> Bool
+sil public_external [transparent] [fragile] @_TFsoi1gFTSiSi_Sb : $@convention(thin) (Int, Int) -> Bool {
+// %0                                             // user: %2
+// %1                                             // user: %3
+bb0(%0 : $Int, %1 : $Int):
+  %2 = struct_extract %0 : $Int, #Int._value, scope 24 // user: %4
+  %3 = struct_extract %1 : $Int, #Int._value, scope 24 // user: %4
+  %4 = builtin "cmp_sgt_Int64"(%2 : $Builtin.Int64, %3 : $Builtin.Int64) : $Builtin.Int1, scope 24 // user: %5
+  %5 = struct $Bool (%4 : $Builtin.Int1), scope 24 // user: %6
+  return %5 : $Bool, scope 24                     // id: %6
+}
+
+
+// _ContiguousArrayStorageBase._withVerbatimBridgedUnsafeBuffer<A> ((UnsafeBufferPointer<AnyObject>) throws -> A) throws -> A?
+sil hidden_external [fragile] @_TFCs27_ContiguousArrayStorageBase32_withVerbatimBridgedUnsafeBufferurfzFzGSRPs9AnyObject__xGSqx_ : $@convention(method) <τ_0_0> (@owned @callee_owned (UnsafeBufferPointer<AnyObject>) -> (@out τ_0_0, @error Error), @guaranteed _ContiguousArrayStorageBase) -> (@out Optional<τ_0_0>, @error Error)
+
+
+// _ContiguousArrayStorageBase._getNonVerbatimBridgedCount() -> Int
+sil hidden_external [fragile] @_TFCs27_ContiguousArrayStorageBase27_getNonVerbatimBridgedCountfT_Si : $@convention(method) (@guaranteed _ContiguousArrayStorageBase) -> Int
+
+
+// _ContiguousArrayStorageBase._getNonVerbatimBridgedHeapBuffer() -> _HeapBuffer<Int, AnyObject>
+sil hidden_external [fragile] @_TFCs27_ContiguousArrayStorageBase32_getNonVerbatimBridgedHeapBufferfT_GVs11_HeapBufferSiPs9AnyObject__ : $@convention(method) (@guaranteed _ContiguousArrayStorageBase) -> @owned _HeapBuffer<Int, AnyObject>
+
+
+// _ContiguousArrayStorageBase.canStoreElements(ofDynamicType : Any.Type) -> Bool
+sil hidden_external [fragile] @_TFCs27_ContiguousArrayStorageBase16canStoreElementsfT13ofDynamicTypePMP__Sb : $@convention(method) (@thick Any.Type, @guaranteed _ContiguousArrayStorageBase) -> Bool
+
+
+// _ContiguousArrayStorageBase.staticElementType.getter
+sil hidden_external [fragile] @_TFCs27_ContiguousArrayStorageBaseg17staticElementTypePMP_ : $@convention(method) (@guaranteed _ContiguousArrayStorageBase) -> @thick Any.Type
+
+
+// _ContiguousArrayStorageBase.__deallocating_deinit
+sil hidden_external [fragile] @_TFCs27_ContiguousArrayStorageBaseD : $@convention(method) (@owned _ContiguousArrayStorageBase) -> ()
+
+
+// _SwiftNativeNSArrayWithContiguousStorage.init() -> _SwiftNativeNSArrayWithContiguousStorage
+sil hidden_external [fragile] @_TFCs40_SwiftNativeNSArrayWithContiguousStoragecfT_S_ : $@convention(method) (@owned _SwiftNativeNSArrayWithContiguousStorage) -> @owned _SwiftNativeNSArrayWithContiguousStorage
+
+
+// _SwiftNativeNSArrayWithContiguousStorage.withUnsafeBufferOfObjects<A> ((UnsafeBufferPointer<AnyObject>) throws -> A) throws -> A
+sil hidden_external [fragile] @_TFCs40_SwiftNativeNSArrayWithContiguousStorage25withUnsafeBufferOfObjectsurfzFzGSRPs9AnyObject__xx : $@convention(method) <τ_0_0> (@owned @callee_owned (UnsafeBufferPointer<AnyObject>) -> (@out τ_0_0, @error Error), @guaranteed _SwiftNativeNSArrayWithContiguousStorage) -> (@out τ_0_0, @error Error)
+
+
+// _SwiftNativeNSArrayWithContiguousStorage.__deallocating_deinit
+sil hidden_external [fragile] @_TFCs40_SwiftNativeNSArrayWithContiguousStorageD : $@convention(method) (@owned _SwiftNativeNSArrayWithContiguousStorage) -> ()
+
+
+// _SwiftNativeNSArray.init() -> _SwiftNativeNSArray
+sil hidden_external [fragile] @_TFCs19_SwiftNativeNSArraycfT_S_ : $@convention(method) (@owned _SwiftNativeNSArray) -> @owned _SwiftNativeNSArray
+
+
+// _SwiftNativeNSArray.__deallocating_deinit
+sil hidden_external [fragile] @_TFCs19_SwiftNativeNSArrayD : $@convention(method) (@owned _SwiftNativeNSArray) -> ()
+
+sil_vtable _ContiguousArrayStorage {
+  #_SwiftNativeNSArray.init!initializer.1: _TFCs27_ContiguousArrayStorageBasecfT_S_	// _ContiguousArrayStorageBase.init() -> _ContiguousArrayStorageBase
+  #_SwiftNativeNSArrayWithContiguousStorage.withUnsafeBufferOfObjects!1: _TFCs27_ContiguousArrayStorageBase25withUnsafeBufferOfObjectsurfzFzGSRPs9AnyObject__xx	// _ContiguousArrayStorageBase.withUnsafeBufferOfObjects<A> ((UnsafeBufferPointer<AnyObject>) throws -> A) throws -> A
+  #_ContiguousArrayStorageBase.init!initializer.1: _TFCs23_ContiguousArrayStoragecfT16_doNotCallMeBaseT__GS_x_	// _ContiguousArrayStorage.init(_doNotCallMeBase : ()) -> _ContiguousArrayStorage<A>
+  #_ContiguousArrayStorageBase._withVerbatimBridgedUnsafeBuffer!1: _TFCs23_ContiguousArrayStorage32_withVerbatimBridgedUnsafeBufferurfzFzGSRPs9AnyObject__qd__GSqqd___	// _ContiguousArrayStorage._withVerbatimBridgedUnsafeBuffer<A> ((UnsafeBufferPointer<AnyObject>) throws -> A1) throws -> A1?
+  #_ContiguousArrayStorageBase._getNonVerbatimBridgedCount!1: _TFCs23_ContiguousArrayStorage27_getNonVerbatimBridgedCountfT_Si	// _ContiguousArrayStorage._getNonVerbatimBridgedCount() -> Int
+  #_ContiguousArrayStorageBase._getNonVerbatimBridgedHeapBuffer!1: _TFCs23_ContiguousArrayStorage32_getNonVerbatimBridgedHeapBufferfT_GVs11_HeapBufferSiPs9AnyObject__	// _ContiguousArrayStorage._getNonVerbatimBridgedHeapBuffer() -> _HeapBuffer<Int, AnyObject>
+  #_ContiguousArrayStorageBase.canStoreElements!1: _TFCs23_ContiguousArrayStorage16canStoreElementsfT13ofDynamicTypePMP__Sb	// _ContiguousArrayStorage.canStoreElements(ofDynamicType : Any.Type) -> Bool
+  #_ContiguousArrayStorageBase.staticElementType!getter.1: _TFCs23_ContiguousArrayStorageg17staticElementTypePMP_	// _ContiguousArrayStorage.staticElementType.getter
+  #_ContiguousArrayStorage.deinit!deallocator: _TFCs23_ContiguousArrayStorageD	// _ContiguousArrayStorage.__deallocating_deinit
+}
+
+sil_vtable _HeapBufferStorage {
+  #_HeapBufferStorage.init!initializer.1: _TFCs18_HeapBufferStoragecfT_GS_xq__	// _HeapBufferStorage.init() -> _HeapBufferStorage<A, B>
+  #_HeapBufferStorage.deinit!deallocator: _TFCs18_HeapBufferStorageD	// _HeapBufferStorage.__deallocating_deinit
+}
+
+sil_vtable _ContiguousArrayStorageBase {
+  #_SwiftNativeNSArray.init!initializer.1: _TFCs27_ContiguousArrayStorageBasecfT_S_	// _ContiguousArrayStorageBase.init() -> _ContiguousArrayStorageBase
+  #_SwiftNativeNSArrayWithContiguousStorage.withUnsafeBufferOfObjects!1: _TFCs27_ContiguousArrayStorageBase25withUnsafeBufferOfObjectsurfzFzGSRPs9AnyObject__xx	// _ContiguousArrayStorageBase.withUnsafeBufferOfObjects<A> ((UnsafeBufferPointer<AnyObject>) throws -> A) throws -> A
+  #_ContiguousArrayStorageBase.init!initializer.1: _TFCs27_ContiguousArrayStorageBasecfT16_doNotCallMeBaseT__S_	// _ContiguousArrayStorageBase.init(_doNotCallMeBase : ()) -> _ContiguousArrayStorageBase
+  #_ContiguousArrayStorageBase._withVerbatimBridgedUnsafeBuffer!1: _TFCs27_ContiguousArrayStorageBase32_withVerbatimBridgedUnsafeBufferurfzFzGSRPs9AnyObject__xGSqx_	// _ContiguousArrayStorageBase._withVerbatimBridgedUnsafeBuffer<A> ((UnsafeBufferPointer<AnyObject>) throws -> A) throws -> A?
+  #_ContiguousArrayStorageBase._getNonVerbatimBridgedCount!1: _TFCs27_ContiguousArrayStorageBase27_getNonVerbatimBridgedCountfT_Si	// _ContiguousArrayStorageBase._getNonVerbatimBridgedCount() -> Int
+  #_ContiguousArrayStorageBase._getNonVerbatimBridgedHeapBuffer!1: _TFCs27_ContiguousArrayStorageBase32_getNonVerbatimBridgedHeapBufferfT_GVs11_HeapBufferSiPs9AnyObject__	// _ContiguousArrayStorageBase._getNonVerbatimBridgedHeapBuffer() -> _HeapBuffer<Int, AnyObject>
+  #_ContiguousArrayStorageBase.canStoreElements!1: _TFCs27_ContiguousArrayStorageBase16canStoreElementsfT13ofDynamicTypePMP__Sb	// _ContiguousArrayStorageBase.canStoreElements(ofDynamicType : Any.Type) -> Bool
+  #_ContiguousArrayStorageBase.staticElementType!getter.1: _TFCs27_ContiguousArrayStorageBaseg17staticElementTypePMP_	// _ContiguousArrayStorageBase.staticElementType.getter
+  #_ContiguousArrayStorageBase.deinit!deallocator: _TFCs27_ContiguousArrayStorageBaseD	// _ContiguousArrayStorageBase.__deallocating_deinit
+}
+
+sil_vtable _SwiftNativeNSArrayWithContiguousStorage {
+  #_SwiftNativeNSArray.init!initializer.1: _TFCs40_SwiftNativeNSArrayWithContiguousStoragecfT_S_	// _SwiftNativeNSArrayWithContiguousStorage.init() -> _SwiftNativeNSArrayWithContiguousStorage
+  #_SwiftNativeNSArrayWithContiguousStorage.withUnsafeBufferOfObjects!1: _TFCs40_SwiftNativeNSArrayWithContiguousStorage25withUnsafeBufferOfObjectsurfzFzGSRPs9AnyObject__xx	// _SwiftNativeNSArrayWithContiguousStorage.withUnsafeBufferOfObjects<A> ((UnsafeBufferPointer<AnyObject>) throws -> A) throws -> A
+  #_SwiftNativeNSArrayWithContiguousStorage.deinit!deallocator: _TFCs40_SwiftNativeNSArrayWithContiguousStorageD	// _SwiftNativeNSArrayWithContiguousStorage.__deallocating_deinit
+}
+
+sil_vtable _SwiftNativeNSArray {
+  #_SwiftNativeNSArray.init!initializer.1: _TFCs19_SwiftNativeNSArraycfT_S_	// _SwiftNativeNSArray.init() -> _SwiftNativeNSArray
+  #_SwiftNativeNSArray.deinit!deallocator: _TFCs19_SwiftNativeNSArrayD	// _SwiftNativeNSArray.__deallocating_deinit
+}
+
+sil_witness_table public_external [fragile] Int: Comparable module Swift {
+  base_protocol Equatable: Int: Equatable module Swift
+  method #Comparable."<"!1: @_TTWSis10ComparablesZFS_oi1lfTxx_Sb	// protocol witness for static Comparable.< infix(A, A) -> Bool in conformance Int
+  method #Comparable."<="!1: @_TTWSis10ComparablesZFS_oi2lefTxx_Sb	// protocol witness for static Comparable.<= infix(A, A) -> Bool in conformance Int
+  method #Comparable.">="!1: @_TTWSis10ComparablesZFS_oi2gefTxx_Sb	// protocol witness for static Comparable.>= infix(A, A) -> Bool in conformance Int
+  method #Comparable.">"!1: @_TTWSis10ComparablesZFS_oi1gfTxx_Sb	// protocol witness for static Comparable.> infix(A, A) -> Bool in conformance Int
+}
+
+sil_witness_table <Value, Element> _HeapBufferStorage<Value, Element>: AnyObject module Swift
+
+sil_witness_table _SwiftNativeNSArray: AnyObject module Swift
+
+
+

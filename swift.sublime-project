@@ -1,0 +1,26 @@
+{
+    "folders":
+    [
+        {
+            "path": "swift",
+            "name": "Swift",
+            "follow_symlinks": true
+        },
+        {
+            "path": "bng-redundant-array-init",
+            "name": "Redundant Array Init Removal"
+        }
+    ],
+    "settings":
+    {
+        "tab_size": 2,
+  			"translate_tabs_to_spaces": true
+    },
+    "build_systems":
+    [
+        {
+            "name": "CMake",
+            "shell_cmd": "$project_path/bng-redundant-array-init/test.sh"
+        }
+    ]
+}
