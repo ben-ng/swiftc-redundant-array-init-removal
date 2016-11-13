@@ -13,4 +13,4 @@ time ${SWIFT_SOURCE_ROOT}/utils/build-script -R
 # Run only the SILOptimizer test
 time ${LLVM_SOURCE_ROOT}/utils/lit/lit.py -sv \
   --param swift_site_config=${SWIFT_BUILD_ROOT}/test-macosx-x86_64/lit.site.cfg \
-  ${SWIFT_SOURCE_ROOT}/test/SILOptimizer/redundant_array_init_removal.sil
+  ${SWIFT_SOURCE_ROOT}/test/SILOptimizer/redundant_array_init_removal.swift
